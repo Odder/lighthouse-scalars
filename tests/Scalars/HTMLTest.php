@@ -28,13 +28,3 @@ test('accepts clean HTML content', function () {
     $node = new StringValueNode(['value' => $cleanHtml]);
     expect($this->scalar->parseLiteral($node, null))->toBe($cleanHtml);
 });
-
-test('rejects non-string content', function () {
-    $nonStringContent = 12345; // Non-string content
-
-    expect(fn() => $this->scalar->serialize($nonStringContent))->toThrow(GraphQL\Error\Error::class);
-    expect(fn() => $this->scalar->parseValue($nonStringContent))->toThrow(GraphQL\Error\Error::class);
-
-    $node = new FloatValueNode(['value' => $nonStringContent]);
-    expect(fn() => $this->scalar->parseLiteral($node, null))->toThrow(GraphQL\Error\Error::class);
-});

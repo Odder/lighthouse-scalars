@@ -8,8 +8,12 @@ use GraphQL\Language\AST\StringValueNode;
 
 class SemVer extends ScalarType
 {
-    public $description = <<<TXT
-        The `SemVer` scalar type represents version numbers following the Semantic Versioning Specification (SemVer).
+    public ?string $description = <<<TXT
+        The `SemVer` scalar type represents semantic versioning strings.
+        Inputs can be in the format of `MAJOR.MINOR.PATCH` or `MAJOR.MINOR.PATCH-PRERELEASE+BUILD`.
+        Outputs are always in the same format as the input.
+        Examples: `1.0.0`, `2.3.4-alpha.5+build.6`
+        You can read more about semantic versioning at https://semver.org/
         TXT;
 
     public function serialize($value): string

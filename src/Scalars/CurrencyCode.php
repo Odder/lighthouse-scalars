@@ -11,7 +11,7 @@ class CurrencyCode extends ScalarType
 {
     use ValidatesCurrencyCode;
 
-    public $description = <<<TXT
+    public ?string $description = <<<TXT
         The `CurrencyCode` scalar type represents currency codes as specified by ISO 4217.
         TXT;
 

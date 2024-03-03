@@ -11,7 +11,7 @@ use GraphQL\Language\AST\IntValueNode;
  */
 class NegativeInteger extends ScalarType
 {
-    public $description = <<<TXT
+    public ?string $description = <<<TXT
         The `PositiveInteger` scalar type represents non-negative integers greater than 0. This scalar is used to validate and serialize positive integer values within GraphQL queries and mutations.
         TXT;
 

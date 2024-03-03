@@ -11,7 +11,7 @@ class CountryCode extends ScalarType
 {
     use ValidatesCountryCode;
 
-    public $description = <<<TXT
+    public ?string $description = <<<TXT
         The `CountryCode` scalar type represents country codes as specified by ISO 3166-1 alpha-2.
         TXT;
 

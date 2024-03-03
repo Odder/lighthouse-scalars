@@ -8,7 +8,7 @@ use GraphQL\Language\AST\StringValueNode;
 
 class IPv6 extends ScalarType
 {
-    public $description = <<<TXT
+    public ?string $description = <<<TXT
         The `IPv6` scalar type represents IPv6 address strings.
         TXT;
 

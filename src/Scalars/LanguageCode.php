@@ -15,7 +15,7 @@ class LanguageCode extends ScalarType
 {
     use ValidatesLanguageCode;
 
-    public $description = <<<TXT
+    public ?string $description = <<<TXT
         The `LanguageCode` scalar type represents language codes compliant with the ISO 639-1 standard. It validates that inputs are two-letter language codes within GraphQL queries and mutations.
         TXT;
 

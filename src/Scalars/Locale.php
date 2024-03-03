@@ -17,7 +17,7 @@ class Locale extends ScalarType
     use ValidatesCountryCode;
     use ValidatesLanguageCode;
 
-    public $description = <<<TXT
+    public ?string $description = <<<TXT
         The `Locale` scalar type represents locale identifiers compliant with IETF language tag format, which may include a language code, an optional script code, and an optional region code, such as "en", "en-US", or "zh-CN". Underscores in the input will be converted to hyphens to normalize the locale identifier.
         TXT;
 

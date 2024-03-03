@@ -12,7 +12,7 @@ use GraphQL\Language\AST\StringValueNode;
  */
 class Email extends ScalarType
 {
-    public $description = <<<TXT
+    public ?string $description = <<<TXT
         The `Email` scalar type represents email addresses, ensuring inputs are compliant with the RFC 5321 specification. It is designed to validate email address formats within GraphQL queries and mutations.
         TXT;
 

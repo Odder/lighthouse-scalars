@@ -13,7 +13,7 @@ use GraphQL\Language\AST\Node;
  */
 class NegativeFloat extends ScalarType
 {
-    public $description = <<<TXT
+    public ?string $description = <<<TXT
         The `PositiveFloat` scalar type represents floating point numbers that are strictly greater than zero. It is designed to validate positive float values within GraphQL queries and mutations.
         TXT;
 

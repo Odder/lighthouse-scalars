@@ -8,7 +8,7 @@ use GraphQL\Language\AST\StringValueNode;
 
 class JSON extends ScalarType
 {
-    public $description = <<<TXT
+    public ?string $description = <<<TXT
         The `JSON` scalar type represents JSON values as specified by ECMA-404.
         TXT;
 

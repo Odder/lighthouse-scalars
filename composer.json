@@ -8,10 +8,9 @@
     "laravel",
     "php"
   ],
-  "version": "0.1.0",
   "require": {
     "php": "^8.0",
-    "webonyx/graphql-php": "^14.11",
+    "webonyx/graphql-php": "^15",
     "ezyang/htmlpurifier": "^4.17",
     "p3k/emoji-detector": "^1.0"
   },

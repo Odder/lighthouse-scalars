@@ -38,9 +38,12 @@ class HTML extends ScalarType
     }
 
     /**
-     * @var string A description of the HTML scalar type.
+     * @var ?string A description of the HTML scalar type.
      */
-    public $description = "The `HTML` scalar type represents text formatted as HTML, sanitized for security.";
+    public ?string $description = <<<TXT
+        The `HTML` scalar type represents HTML formatted text. This scalar is used to validate and sanitize HTML content within GraphQL queries and mutations.
+        The HTML content is sanitized using HTMLPurifier to ensure safety against XSS attacks and other vulnerabilities.
+        TXT;
 
     /**
      * Serializes a value to include in a response.

@@ -8,7 +8,7 @@ use GraphQL\Language\AST\StringValueNode;
 
 class URL extends ScalarType
 {
-    public $description = <<<TXT
+    public ?string $description = <<<TXT
         The `URL` scalar type represents a valid URL as specified by RFC 3986.
         Only URLs with "http" or "https" schemes are considered valid.
         TXT;

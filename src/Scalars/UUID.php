@@ -8,7 +8,7 @@ use GraphQL\Language\AST\StringValueNode;
 
 class UUID extends ScalarType
 {
-    public $description = <<<TXT
+    public ?string $description = <<<TXT
         The `UUID` scalar type represents a Universally Unique Identifier as defined by RFC 4122.
         TXT;
 

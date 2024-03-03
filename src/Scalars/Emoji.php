@@ -13,7 +13,7 @@ use Emoji as EmojiDetector;
  */
 class Emoji extends ScalarType
 {
-    public $description = <<<TXT
+    public ?string $description = <<<TXT
         The `Emoji` scalar type represents a string containing exactly one emoji. It ensures that inputs are exactly one emoji character, validated using the emoji-detector-php library. This scalar is ideal for applications requiring strict validation of emoji input in GraphQL queries and mutations.
         TXT;
 

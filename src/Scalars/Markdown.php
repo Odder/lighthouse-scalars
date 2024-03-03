@@ -19,7 +19,7 @@ class Markdown extends ScalarType
     /**
      * @var string A description of the Markdown scalar type.
      */
-    public $description = "The `Markdown` scalar type represents text formatted in Markdown.";
+    public ?string $description = "The `Markdown` scalar type represents text formatted in Markdown.";
 
     /**
      * Serializes a value to include in a response.

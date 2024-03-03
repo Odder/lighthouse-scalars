@@ -8,7 +8,7 @@ use GraphQL\Language\AST\StringValueNode;
 
 class URI extends ScalarType
 {
-    public $description = <<<TXT
+    public ?string $description = <<<TXT
         The `URI` scalar type represents a Uniform Resource Identifier as specified by RFC 3986.
         This scalar type is designed to encompass all possible URI schemes.
         TXT;
