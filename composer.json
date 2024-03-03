@@ -31,13 +31,6 @@
       "Odder\\LighthouseScalars\\Tests\\": "tests/"
     }
   },
-  "extra": {
-    "laravel": {
-      "providers": [
-        "Odder\\LighthouseScalars\\ScalarServiceProvider"
-      ]
-    }
-  },
   "scripts": {
     "pest:test": "pest --colors=always --stop-on-failure",
     "test": [
