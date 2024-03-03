@@ -51,16 +51,34 @@ Markup:
 
 ## Usage
 
-To use a scalar, you must first register it with your Lighthouse server. You can do this by adding the scalar to the `scalars` array in your `lighthouse.php` configuration file:
+You can opt-in to the scalars you want by registering them in the `TypeRegistry` in a service provider. For example, you can register the `PositiveFloat` and `Emoji` scalars in the `AppServiceProvider`:
 
 ```php
-'scalars' => [
-    \Odder\LighthouseScalars\Scalars\PositiveFloat::class,
-    \Odder\LighthouseScalars\Scalars\NonNegativeFloat::class,
-    \Odder\LighthouseScalars\Scalars\PositiveInt::class,
-    \Odder\LighthouseScalars\Scalars\NonNegativeInt::class,
-    // Add more scalars as necessary
-],
+use Odder\LighthouseScalars\Scalars;
+use Nuwave\Lighthouse\Schema\TypeRegistry;
+
+class AppServiceProvider extends ServiceProvider
+{
+    public function boot()
+    {
+        ...
+    }
+
+    public function register(TypeRegistry $typeRegistry)
+    {
+        $typeRegistry->register(Scalars::PositiveFloat);
+        $typeRegistry->register(Scalars::Emoji);
+    }
+}
+```
+
+After you have registered the Scalars you need in the `TypeRegistry`, you can use them in your schema:
+
+```graphql
+type Query {
+  mood: Emoji!
+  naturalNumber: PositiveFloat!
+}
 ```
 
 ### Testing
@@ -93,9 +111,4 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 
 ## Security
 
-If you discover any security-related issues, please email [
-
-## Changelog
-
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
-
+If you discover any security-related issues, please email hi@odder.dev instead of using the issue tracker.

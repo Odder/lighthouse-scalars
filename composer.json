@@ -35,7 +35,8 @@
     "pest:test": "pest --colors=always --stop-on-failure",
     "test": [
       "@pest:test"
-    ]
+    ],
+    "test:coverage": "phpdbg -qrr vendor/bin/pest --coverage-html=coverage"
   },
   "require-dev": {
     "pestphp/pest": "^1.23"
