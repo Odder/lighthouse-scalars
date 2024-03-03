@@ -1,0 +1,56 @@
+{
+  "name": "odder/lighthouse-scalars",
+  "description": "A collection of custom scalar types for usage with https://github.com/webonyx/graphql-php",
+  "type": "library",
+  "keywords": [
+    "graphql",
+    "lighthouse",
+    "laravel",
+    "php"
+  ],
+  "version": "0.1.0",
+  "require": {
+    "php": "^8.0",
+    "webonyx/graphql-php": "^14.11",
+    "ezyang/htmlpurifier": "^4.17",
+    "p3k/emoji-detector": "^1.0"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Oscar Roth Andersen",
+      "email": "hi@odder.dev"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Odder\\LighthouseScalars\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Odder\\LighthouseScalars\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Odder\\LighthouseScalars\\ScalarServiceProvider"
+      ]
+    }
+  },
+  "scripts": {
+    "pest:test": "pest --colors=always --stop-on-failure",
+    "test": [
+      "@pest:test"
+    ]
+  },
+  "require-dev": {
+    "pestphp/pest": "^1.23"
+  },
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": false
+    }
+  }
+}
