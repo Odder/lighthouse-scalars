@@ -1,5 +1,7 @@
 # Latitude
 
+### Description
+
 A float value representing a Longitude. The value must be within the range of -90 to 90.
 
 Examples:

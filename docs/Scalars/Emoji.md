@@ -1,5 +1,7 @@
 # Emoji
 
+### Description
+
 String expecting exactly one unicode emoji.
 
 Examples:

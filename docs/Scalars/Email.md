@@ -1,5 +1,7 @@
 # Email
 
+### Description
+
 Following the [RFC 5322](https://tools.ietf.org/html/rfc5322) standard, the `Email` scalar type represents textual data, specifically an email address.
 
 ### Coercions
