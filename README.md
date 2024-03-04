@@ -1,14 +1,14 @@
 # Lighthouse Scalars
 
-This package provides a set of custom scalars for the [Lighthouse](https://lighthouse-php.com/) GraphQL server for Laravel. The scalars are designed to provide more specific validation and serialization for common data types.
+This package provides a set of custom scalars for the [webonyx/graphql-php](https://github.com/webonyx/graphql-php) library, which is used under the hood by [Lighthouse](https://lighthouse-php.com/), a PHP port of the popular [GraphQL](https://graphql.org/) server.
 
-## Installation
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/odder/lighthouse-scalars.svg?style=flat-square)](https://packagist.org/packages/odder/lighthouse-scalars)
+[![PHP version](https://img.shields.io/packagist/php-v/odder/lighthouse-scalars?style=flat-square)]()
+[![webonyx/graphql-php](https://img.shields.io/badge/graphql--php-^15.0.0-blue?style=flat-square)]()
+[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/odder/lighthouse-scalars/Tests?label=tests&style=flat-square)]()
+[![Total Downloads](https://img.shields.io/packagist/dt/odder/lighthouse-scalars.svg?style=flat-square)](https://packagist.org/packages/odder/lighthouse-scalars)
+[![License](https://img.shields.io/packagist/l/odder/lighthouse-scalars?style=flat-square)](https://packagist.org/packages/odder/lighthouse-scalars)
 
-You can install the package via composer:
-
-```bash
-composer require odder/lighthouse-scalars
-```
 
 ## Supported Scalars
 
@@ -49,7 +49,17 @@ Markup:
 - `HTML` - Sanitised using [HTML Purifier](http://htmlpurifier.org/) to prevent XSS attacks. see [HTML](https://en.wikipedia.org/wiki/HTML)
 - `Markdown` - see [Markdown](https://en.wikipedia.org/wiki/Markdown)
 
+## Installation
+
+You can install the package via composer:
+
+```bash
+composer require odder/lighthouse-scalars
+```
+
 ## Usage
+
+### Using Lighthouse
 
 You can opt-in to the scalars you want by registering them in the `TypeRegistry` in a service provider. For example, you can register the `PositiveFloat` and `Emoji` scalars in the `AppServiceProvider`:
 
@@ -105,6 +115,7 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 
 - [Odder](https://www.github.com/odder)
 - [All Contributors](../../contributors)
+- [webonyx/graphql-php](https://github.com/webonyx/graphql-php)
 - [Lighthouse](https://lighthouse-php.com/)
 - [Laravel](https://laravel.com/)
 - [GraphQL](https://graphql.org/)
