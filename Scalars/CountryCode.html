@@ -320,6 +320,20 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#coercions" class="md-nav__link">
+    Coercions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validations" class="md-nav__link">
+    Validations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#usage" class="md-nav__link">
     Usage
   </a>
@@ -330,6 +344,90 @@
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="CurrencyCode.html" class="md-nav__link">
+        Currency Code
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Email.html" class="md-nav__link">
+        Email
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Emoji.html" class="md-nav__link">
+        Emoji
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="GeoCoordinate.html" class="md-nav__link">
+        GeoCoordinate
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Latitude.html" class="md-nav__link">
+        Latitude
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Longitude.html" class="md-nav__link">
+        Longitude
+      </a>
     </li>
   
 
@@ -383,6 +481,20 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#coercions" class="md-nav__link">
+    Coercions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validations" class="md-nav__link">
+    Validations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#usage" class="md-nav__link">
     Usage
   </a>
@@ -411,14 +523,21 @@
 
 
 <h1 id="country-code">Country Code</h1>
-<p>Following the ISO 3166-1 alpha-2 standard, the country code is a two-letter code that represents a country. The following table lists the country codes for all countries and territories.</p>
-<p>Examples:
-- <code>US</code> - United States
-- <code>CA</code> - Canada
-- <code>GB</code> - United Kingdom
-- <code>FR</code> - France</p>
+<p>Following the ISO 3166-1 alpha-2 standard, the country code is a two-letter code that represents a country.</p>
+<p>Examples:</p>
+<ul>
+<li><code>US</code> - United States</li>
+<li><code>CA</code> - Canada</li>
+<li><code>GB</code> - United Kingdom</li>
+<li><code>FR</code> - France</li>
+</ul>
+<h3 id="coercions">Coercions</h3>
+<p>The country code is coerced to uppercase.</p>
+<h3 id="validations">Validations</h3>
+<p>The country code is validated using the <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1 alpha-2</a> standard.</p>
 <h3 id="usage">Usage</h3>
-<div class="highlight"><pre><span></span><code>type Query {
+<div class="highlight"><pre><span></span><code># schema.graphql
+type Query {
   country(code: CountryCode!): Country!
 }
 
@@ -427,7 +546,8 @@ type Country {
   code: CountryCode!
 }
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>query {
+<div class="highlight"><pre><span></span><code># request
+query {
   country(code: &quot;US&quot;) {
     name
     code
@@ -449,7 +569,7 @@ type Country {
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">March 4, 2024 14:32:57</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">March 4, 2024 15:12:13</span>
       
         <br>
         Created:
@@ -501,6 +621,21 @@ type Country {
           </div>
         </a>
       
+      
+        
+        <a href="CurrencyCode.html" class="md-footer__link md-footer__link--next" aria-label="Next: Currency Code" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Currency Code
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
       
     </nav>
   

@@ -298,6 +298,90 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Scalars/CurrencyCode.html" class="md-nav__link">
+        Currency Code
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Scalars/Email.html" class="md-nav__link">
+        Email
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Scalars/Emoji.html" class="md-nav__link">
+        Emoji
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Scalars/GeoCoordinate.html" class="md-nav__link">
+        GeoCoordinate
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Scalars/Latitude.html" class="md-nav__link">
+        Latitude
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Scalars/Longitude.html" class="md-nav__link">
+        Longitude
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -361,6 +445,48 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#scalars-currencycode" class="md-nav__link">
+    3. Currency Code
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scalars-email" class="md-nav__link">
+    4. Email
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scalars-emoji" class="md-nav__link">
+    5. Emoji
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scalars-geocoordinate" class="md-nav__link">
+    6. GeoCoordinate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scalars-latitude" class="md-nav__link">
+    7. Latitude
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scalars-longitude" class="md-nav__link">
+    8. Longitude
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -420,6 +546,48 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#scalars-currencycode" class="md-nav__link">
+    3. Currency Code
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scalars-email" class="md-nav__link">
+    4. Email
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scalars-emoji" class="md-nav__link">
+    5. Emoji
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scalars-geocoordinate" class="md-nav__link">
+    6. GeoCoordinate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scalars-latitude" class="md-nav__link">
+    7. Latitude
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scalars-longitude" class="md-nav__link">
+    8. Longitude
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -468,14 +636,21 @@
                             Scalars <a class='headerlink' href='#section-scalars' title='Permanent link'>↵</a>
                         </h1>
                         <section class="print-page" id="scalars-countrycode"><h1 id="scalars-countrycode-country-code">Country Code</h1>
-<p>Following the ISO 3166-1 alpha-2 standard, the country code is a two-letter code that represents a country. The following table lists the country codes for all countries and territories.</p>
-<p>Examples:
-- <code>US</code> - United States
-- <code>CA</code> - Canada
-- <code>GB</code> - United Kingdom
-- <code>FR</code> - France</p>
+<p>Following the ISO 3166-1 alpha-2 standard, the country code is a two-letter code that represents a country.</p>
+<p>Examples:</p>
+<ul>
+<li><code>US</code> - United States</li>
+<li><code>CA</code> - Canada</li>
+<li><code>GB</code> - United Kingdom</li>
+<li><code>FR</code> - France</li>
+</ul>
+<h3 id="scalars-countrycode-coercions">Coercions</h3>
+<p>The country code is coerced to uppercase.</p>
+<h3 id="scalars-countrycode-validations">Validations</h3>
+<p>The country code is validated using the <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1 alpha-2</a> standard.</p>
 <h3 id="scalars-countrycode-usage">Usage</h3>
-<div class="highlight"><pre><span></span><code>type Query {
+<div class="highlight"><pre><span></span><code># schema.graphql
+type Query {
   country(code: CountryCode!): Country!
 }
 
@@ -484,7 +659,8 @@ type Country {
   code: CountryCode!
 }
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>query {
+<div class="highlight"><pre><span></span><code># request
+query {
   country(code: &quot;US&quot;) {
     name
     code
@@ -496,6 +672,241 @@ type Country {
 #     &quot;country&quot;: {
 #       &quot;name&quot;: &quot;United States&quot;,
 #       &quot;code&quot;: &quot;US&quot;
+#     }
+#   }
+# }
+</code></pre></div></section><section class="print-page" id="scalars-currencycode"><h1 id="scalars-currencycode-currency-code">Currency Code</h1>
+<p>Following the <a href="https://en.wikipedia.org/wiki/ISO_4217">ISO 4217 standard</a>, the currency code is a three-letter code that represents a currency.</p>
+<p>Examples:</p>
+<ul>
+<li><code>USD</code> - United States Dollar</li>
+<li><code>CAD</code> - Canadian Dollar</li>
+<li><code>GBP</code> - British Pound</li>
+<li><code>EUR</code> - Euro</li>
+<li><code>JPY</code> - Japanese Yen</li>
+</ul>
+<p><em>Please note: Cryptocurrencies are not included in this standard.</em></p>
+<h3 id="scalars-currencycode-coercions">Coercions</h3>
+<p>The currency code is coerced to uppercase.</p>
+<h3 id="scalars-currencycode-validations">Validations</h3>
+<p>The currency code is validated using the <a href="https://en.wikipedia.org/wiki/ISO_4217">ISO 4217 alpha-3</a> standard.</p>
+<h3 id="scalars-currencycode-usage">Usage</h3>
+<div class="highlight"><pre><span></span><code># schema.graphql
+type Query {
+  currency(code: CurrencyCode!): Currency!
+}
+
+type Currency {
+  name: String!
+  code: CurrencyCode!
+}
+</code></pre></div>
+<div class="highlight"><pre><span></span><code># request
+query {
+  currency(code: &quot;USD&quot;) {
+    name
+    code
+  }
+}
+
+# {
+#   &quot;data&quot;: {
+#     &quot;currency&quot;: {
+#       &quot;name&quot;: &quot;United States Dollar&quot;,
+#       &quot;code&quot;: &quot;USD&quot;
+#     }
+#   }
+# }
+</code></pre></div></section><section class="print-page" id="scalars-email"><h1 id="scalars-email-email">Email</h1>
+<p>Following the <a href="https://tools.ietf.org/html/rfc5322">RFC 5322</a> standard, the <code>Email</code> scalar type represents textual data, specifically an email address.</p>
+<h3 id="scalars-email-coercions">Coercions</h3>
+<p>No coercions are applied to the email address.</p>
+<h3 id="scalars-email-validations">Validations</h3>
+<p>The email address is validated using the <a href="https://tools.ietf.org/html/rfc5322">RFC 5322</a> standard. Using the <code>filter_var</code> function with the <code>FILTER_VALIDATE_EMAIL</code> filter.</p>
+<h3 id="scalars-email-usage">Usage</h3>
+<div class="highlight"><pre><span></span><code># schema.graphql
+type Query {
+  user(email: Email!): User!
+}
+
+type User {
+  name: String!
+  email: Email!
+}
+</code></pre></div>
+<div class="highlight"><pre><span></span><code># request
+query {
+  user(email: &quot;example@example.org&quot;) {
+    name
+    email
+  }
+}
+
+# {
+#   &quot;data&quot;: {
+#     &quot;user&quot;: {
+#       &quot;name&quot;: &quot;Example&quot;,
+#       &quot;email&quot;: &quot;example@example.org&quot;
+#     }
+#   }
+# }
+</code></pre></div></section><section class="print-page" id="scalars-emoji"><h1 id="scalars-emoji-emoji">Emoji</h1>
+<p>String expecting exactly one unicode emoji.</p>
+<p>Examples:</p>
+<ul>
+<li><code>🙂</code></li>
+<li><code>👍</code></li>
+<li><code>🍕</code></li>
+<li><code>🚀</code></li>
+<li><code>🎉</code></li>
+<li><code>🔥</code></li>
+</ul>
+<h3 id="scalars-emoji-coercions">Coercions</h3>
+<p>No coercions are applied to the emoji.</p>
+<h3 id="scalars-emoji-validations">Validations</h3>
+<p>The emoji is validated using the <a href="https://github.com/aaronpk/emoji-detector-php">emoji-detector-php</a> library.</p>
+<h3 id="scalars-emoji-usage">Usage</h3>
+<div class="highlight"><pre><span></span><code># schema.graphql
+type Query {
+  mood: Emoji!
+}
+</code></pre></div>
+<div class="highlight"><pre><span></span><code># request
+query {
+  mood
+}
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;mood&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;🙂&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></section><section class="print-page" id="scalars-geocoordinate"><h1 id="scalars-geocoordinate-geocoordinate">GeoCoordinate</h1>
+<p><strong> SHOULD NOT BE USED DIRECTLY </strong></p>
+<p>A float value representing a geographic coordinate. The value must be within the range of -90 to 90 for latitude and -180 to 180 for longitude.</p>
+<p>Examples:</p>
+<ul>
+<li><code>40.7128</code> - New York City Latitude</li>
+<li><code>-74.0060</code> - New York City Longitude</li>
+<li><code>51.5074</code> - London Latitude</li>
+<li><code>-0.1278</code> - London Longitude</li>
+<li><code>48.8566</code> - Paris Latitude</li>
+<li><code>2.3522</code> - Paris Longitude</li>
+<li><code>34.0522</code> - Los Angeles Latitude</li>
+<li><code>-118.2437</code> - Los Angeles Longitude</li>
+</ul>
+<h3 id="scalars-geocoordinate-coercions">Coercions</h3>
+<p>The value is coerced to a float.</p>
+<p>Supports input as sexagesimal degrees (DMS) in the format <code>40° 26' 46" N</code> or <code>40° 26' 46" W</code>.</p>
+<h3 id="scalars-geocoordinate-validations">Validations</h3>
+<p>The value is validated to be within the range of -180 to 180.</p>
+<h3 id="scalars-geocoordinate-usage">Usage</h3>
+<div class="highlight"><pre><span></span><code># schema.graphql
+type Query {
+    location: Location!
+}
+
+type Location {
+  name: String!
+  coordinate: [GeoCoordinate!]!
+}
+</code></pre></div>
+<div class="highlight"><pre><span></span><code># request
+query {
+  location {
+    name
+    coordinate
+  }
+}
+
+# {
+#   &quot;data&quot;: {
+#     &quot;location&quot;: {
+#       &quot;name&quot;: &quot;New York City&quot;,
+#       &quot;coordinate&quot;: [40.7128, -74.0060]
+#     }
+#   }
+# }
+</code></pre></div></section><section class="print-page" id="scalars-latitude"><h1 id="scalars-latitude-latitude">Latitude</h1>
+<p>A float value representing a Longitude. The value must be within the range of -90 to 90.</p>
+<p>Examples:</p>
+<ul>
+<li><code>40.7128</code> - New York City Latitude</li>
+<li><code>51.5074</code> - London Latitude</li>
+<li><code>48.8566</code> - Paris Latitude</li>
+<li><code>34.0522</code> - Los Angeles Latitude</li>
+<li><code>-23.5505</code> - São Paulo Latitude</li>
+</ul>
+<h3 id="scalars-latitude-coercions">Coercions</h3>
+<p>The value is coerced to a float.</p>
+<p>Supports input as sexagesimal degrees (DMS) in the format <code>40° 26' 46" N</code> or <code>40° 26' 46" W</code>.</p>
+<h3 id="scalars-latitude-validations">Validations</h3>
+<p>The value is validated to be within the range of -90 to 90.</p>
+<h3 id="scalars-latitude-usage">Usage</h3>
+<div class="highlight"><pre><span></span><code># schema.graphql
+type Query {
+    location: Coordinate!
+}
+
+type Coordinate {
+    latitude: Latitude!
+    longitude: Longitude!
+}
+</code></pre></div>
+<div class="highlight"><pre><span></span><code># request
+query {
+  location {
+    latitude
+    longitude
+  }
+}
+
+# {
+#   &quot;data&quot;: {
+#     &quot;location&quot;: {
+#       &quot;latitude&quot;: 40.7128,
+#       &quot;longitude&quot;: -74.0060
+#     }
+#   }
+# }
+</code></pre></div></section><section class="print-page" id="scalars-longitude"><h1 id="scalars-longitude-longitude">Longitude</h1>
+<p>A float value representing a Longitude. The value must be within the range of -180 to 180.</p>
+<p>Examples:</p>
+<ul>
+<li><code>-74.0060</code> - New York City Longitude</li>
+<li><code>-0.1278</code> - London Longitude</li>
+<li><code>2.3522</code> - Paris Longitude</li>
+<li><code>-118.2437</code> - Los Angeles Longitude</li>
+</ul>
+<h3 id="scalars-longitude-coercions">Coercions</h3>
+<p>The value is coerced to a float.</p>
+<p>Supports input as sexagesimal degrees (DMS) in the format <code>40° 26' 46" N</code> or <code>40° 26' 46" W</code>.</p>
+<h3 id="scalars-longitude-validations">Validations</h3>
+<p>The value is validated to be within the range of -180 to 180.</p>
+<h3 id="scalars-longitude-usage">Usage</h3>
+<div class="highlight"><pre><span></span><code># schema.graphql
+type Query {
+    location: Coordinate!
+}
+
+type Coordinate {
+    latitude: Latitude!
+    longitude: Longitude!
+}
+</code></pre></div>
+<div class="highlight"><pre><span></span><code># request
+query {
+  location {
+    latitude
+    longitude
+  }
+}
+
+# {
+#   &quot;data&quot;: {
+#     &quot;location&quot;: {
+#       &quot;latitude&quot;: 40.7128,
+#       &quot;longitude&quot;: -74.0060
 #     }
 #   }
 # }
