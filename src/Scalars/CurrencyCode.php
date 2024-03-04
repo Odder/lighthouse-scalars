@@ -2,12 +2,10 @@
 
 namespace Odder\LighthouseScalars\Scalars;
 
-use GraphQL\Type\Definition\ScalarType;
-use GraphQL\Error\Error;
-use GraphQL\Language\AST\StringValueNode;
 use Odder\LighthouseScalars\Concerns\ValidatesCurrencyCode;
+use Odder\LighthouseScalars\Core\GenericScalarType;
 
-class CurrencyCode extends ScalarType
+class CurrencyCode extends GenericScalarType
 {
     use ValidatesCurrencyCode;
 
@@ -15,34 +13,13 @@ class CurrencyCode extends ScalarType
         The `CurrencyCode` scalar type represents currency codes as specified by ISO 4217.
         TXT;
 
-    public function serialize($value): string
+    protected function coerce($value): string
     {
-        if (!$this->isValidCurrencyCode($value)) {
-            throw new Error("Cannot serialize value as CurrencyCode: {$value}");
-        }
-
-        return $value;
+        return strtoupper($value);
     }
 
-    public function parseValue($value): string
+    protected function isValid($value): bool
     {
-        if (!$this->isValidCurrencyCode($value)) {
-            throw new Error("Cannot represent value as CurrencyCode: {$value}");
-        }
-
-        return $value;
-    }
-
-    public function parseLiteral($valueNode, ?array $variables = null): string
-    {
-        if (!$valueNode instanceof StringValueNode) {
-            throw new Error('Query error: Can only parse strings got: ' . $valueNode->kind, [$valueNode]);
-        }
-
-        if (!$this->isValidCurrencyCode($valueNode->value)) {
-            throw new Error("Not a valid CurrencyCode: {$valueNode->value}");
-        }
-
-        return $valueNode->value;
+        return $this->isValidCurrencyCode($value);
     }
 }

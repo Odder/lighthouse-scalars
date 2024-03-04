@@ -2,45 +2,26 @@
 
 namespace Odder\LighthouseScalars\Scalars;
 
-use GraphQL\Type\Definition\ScalarType;
-use GraphQL\Error\Error;
-use GraphQL\Language\AST\StringValueNode;
+use Odder\LighthouseScalars\Core\GenericScalarType;
 
-class JSON extends ScalarType
+class JSON extends GenericScalarType
 {
     public ?string $description = <<<TXT
         The `JSON` scalar type represents JSON values as specified by ECMA-404.
         TXT;
 
-    public function serialize($value): string
+    protected function coerce($value): mixed
     {
-        // Attempt to encode the value into JSON. This also serves as a validation step.
-        $json = json_encode($value);
-        if (json_last_error() !== JSON_ERROR_NONE) {
-            throw new Error('Cannot serialize value to JSON: ' . json_last_error_msg());
-        }
-
-        return $json;
+        return json_decode($value, true);
     }
 
-    public function parseValue($value): mixed
+    protected function coerceOut($value): string
     {
-        // Attempt to decode the JSON value. This also serves as a validation step.
-        $decoded = json_decode($value, true);
-        if (json_last_error() !== JSON_ERROR_NONE) {
-            throw new Error('Cannot represent value as JSON: ' . json_last_error_msg());
-        }
-
-        return $decoded;
+        return json_encode($value);
     }
 
-    public function parseLiteral($valueNode, ?array $variables = null): mixed
+    protected function isValid($value): bool
     {
-        // We expect the valueNode to be of type StringValueNode for JSON encoded as a string.
-        if (!$valueNode instanceof StringValueNode) {
-            throw new Error('Query error: Can only parse strings got: ' . $valueNode->kind, [$valueNode]);
-        }
-
-        return $this->parseValue($valueNode->value);
+        return json_last_error() === JSON_ERROR_NONE;
     }
 }

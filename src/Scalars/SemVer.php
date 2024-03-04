@@ -2,11 +2,10 @@
 
 namespace Odder\LighthouseScalars\Scalars;
 
-use GraphQL\Type\Definition\ScalarType;
-use GraphQL\Error\Error;
 use GraphQL\Language\AST\StringValueNode;
+use Odder\LighthouseScalars\Core\GenericScalarType;
 
-class SemVer extends ScalarType
+class SemVer extends GenericScalarType
 {
     public ?string $description = <<<TXT
         The `SemVer` scalar type represents semantic versioning strings.
@@ -15,39 +14,9 @@ class SemVer extends ScalarType
         Examples: `1.0.0`, `2.3.4-alpha.5+build.6`
         You can read more about semantic versioning at https://semver.org/
         TXT;
+    protected string $supportedNodeType = StringValueNode::class;
 
-    public function serialize($value): string
-    {
-        if (!$this->isValidSemVer($value)) {
-            throw new Error("Cannot serialize value as SemVer: {$value}");
-        }
-
-        return $value;
-    }
-
-    public function parseValue($value): string
-    {
-        if (!$this->isValidSemVer($value)) {
-            throw new Error("Cannot represent value as SemVer: {$value}");
-        }
-
-        return $value;
-    }
-
-    public function parseLiteral($valueNode, ?array $variables = null): string
-    {
-        if (!$valueNode instanceof StringValueNode) {
-            throw new Error('Query error: Can only parse strings got: ' . $valueNode->kind, [$valueNode]);
-        }
-
-        if (!$this->isValidSemVer($valueNode->value)) {
-            throw new Error("Not a valid SemVer: {$valueNode->value}");
-        }
-
-        return $valueNode->value;
-    }
-
-    protected function isValidSemVer($value): bool
+    protected function isValid($value): bool
     {
         return preg_match('/^(\d+)\.(\d+)\.(\d+)(?:-([0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*))?(?:\+([0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*))?$/', $value) > 0;
     }

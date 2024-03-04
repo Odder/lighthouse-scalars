@@ -2,65 +2,27 @@
 
 namespace Odder\LighthouseScalars\Scalars;
 
-use GraphQL\Error\Error;
-use GraphQL\Type\Definition\ScalarType;
 use GraphQL\Language\AST\IntValueNode;
+use Odder\LighthouseScalars\Core\GenericScalarType;
 
 /**
- * The `PositiveInteger` scalar type represents non-negative integers, strictly greater than 0.
+ * The `NegativeInteger` scalar type represents integers that are less than or equal to zero.
+ * This scalar type ensures that the input is a valid negative integer.
  */
-class NegativeInteger extends ScalarType
+class NegativeInteger extends GenericScalarType
 {
     public ?string $description = <<<TXT
-        The `PositiveInteger` scalar type represents non-negative integers greater than 0. This scalar is used to validate and serialize positive integer values within GraphQL queries and mutations.
+        The `NegativeInteger` scalar type represents integers that are less than or equal to zero.
         TXT;
+    protected string $supportedNodeType = IntValueNode::class;
 
-    /**
-     * Serializes an internal value to include in a response.
-     *
-     * @param mixed $value
-     * @return int
-     * @throws Error
-     */
-    public function serialize($value): int
+    protected function coerce($value): mixed
     {
-        if (!is_int($value) || $value > 0) {
-            throw new Error("Cannot serialize value as positive integer: " . $value);
-        }
-
-        return $value;
+        return is_numeric($value) ? (int)$value : $value;
     }
 
-    /**
-     * Parses an externally provided value (query variable) to use as an input.
-     *
-     * @param mixed $value
-     * @return int
-     * @throws Error
-     */
-    public function parseValue($value): int
+    protected function isValid($value): bool
     {
-        if (!is_int($value) || $value > 0) {
-            throw new Error("Not a valid positive integer: " . $value);
-        }
-
-        return $value;
-    }
-
-    /**
-     * Parses an externally provided literal value (hardcoded in GraphQL query) to use as an input.
-     *
-     * @param \GraphQL\Language\AST\Node $valueNode
-     * @param mixed[]|null $variables
-     * @return int
-     * @throws Error
-     */
-    public function parseLiteral($valueNode, ?array $variables = null): int
-    {
-        if (!$valueNode instanceof IntValueNode || (int)$valueNode->value > 0) {
-            throw new Error("Can only parse positive integers, got: " . $valueNode->kind);
-        }
-
-        return (int)$valueNode->value;
+        return is_numeric($value) && $value <= 0;
     }
 }

@@ -2,16 +2,14 @@
 
 namespace Odder\LighthouseScalars\Scalars;
 
-use GraphQL\Type\Definition\ScalarType;
-use GraphQL\Error\Error;
-use GraphQL\Language\AST\StringValueNode;
 use Odder\LighthouseScalars\Concerns\ValidatesLanguageCode;
+use Odder\LighthouseScalars\Core\GenericScalarType;
 
 /**
  * The `LanguageCode` scalar type represents language codes as defined by ISO 639-1.
  * This scalar ensures that the input is a valid two-letter language code.
  */
-class LanguageCode extends ScalarType
+class LanguageCode extends GenericScalarType
 {
     use ValidatesLanguageCode;
 
@@ -19,58 +17,18 @@ class LanguageCode extends ScalarType
         The `LanguageCode` scalar type represents language codes compliant with the ISO 639-1 standard. It validates that inputs are two-letter language codes within GraphQL queries and mutations.
         TXT;
 
-    /**
-     * Serializes an internal value to include in a response.
-     *
-     * @param mixed $value
-     * @return string
-     * @throws Error
-     */
-    public function serialize($value): string
+    protected function coerce($value): string
     {
-        if (!$this->isValidLanguageCode($value)) {
-            throw new Error("Cannot serialize value as ISO 639-1 language code: " . $value);
-        }
-
-        return strtolower($value);
+        return strtolower((string)$value);
     }
 
-    /**
-     * Parses an externally provided value (query variable) to use as an input.
-     *
-     * @param mixed $value
-     * @return string
-     * @throws Error
-     */
-    public function parseValue($value): string
+    protected function coerceOut($value): string
     {
-        if (!$this->isValidLanguageCode($value)) {
-            throw new Error("Not a valid ISO 639-1 language code: " . $value);
-        }
-
-        return strtolower($value);
+        return strtolower((string)$value);
     }
 
-    /**
-     * Parses an externally provided literal value (hardcoded in GraphQL query) to use as an input.
-     *
-     * @param \GraphQL\Language\AST\Node $valueNode
-     * @param mixed[]|null $variables
-     * @return string
-     * @throws Error
-     */
-    public function parseLiteral($valueNode, ?array $variables = null): string
+    protected function isValid($value): bool
     {
-        if (!$valueNode instanceof StringValueNode) {
-            throw new Error("Can only parse strings, got: " . $valueNode->kind);
-        }
-
-        $value = $valueNode->value;
-
-        if (!$this->isValidLanguageCode($valueNode->value)) {
-            throw new Error("Not a valid ISO 639-1 language code: " . $value);
-        }
-
-        return strtolower($value);
+        return $this->isValidLanguageCode($value);
     }
 }

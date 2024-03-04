@@ -2,78 +2,27 @@
 
 namespace Odder\LighthouseScalars\Scalars;
 
-use GraphQL\Type\Definition\ScalarType;
-use GraphQL\Error\Error;
 use GraphQL\Language\AST\FloatValueNode;
-use GraphQL\Language\AST\Node;
+use Odder\LighthouseScalars\Core\GenericScalarType;
 
 /**
- * The `PositiveFloat` scalar type represents floating point numbers that are greater than zero.
- * This scalar ensures that the input is a valid positive float.
+ * The `NegativeFloat` scalar type represents floating point numbers that are less than or equal to zero.
+ * This scalar type ensures that the input is a valid negative floating point number.
  */
-class NegativeFloat extends ScalarType
+class NegativeFloat extends GenericScalarType
 {
     public ?string $description = <<<TXT
-        The `PositiveFloat` scalar type represents floating point numbers that are strictly greater than zero. It is designed to validate positive float values within GraphQL queries and mutations.
+        The `NegativeFloat` scalar type represents floating point numbers that are less than or equal to zero.
         TXT;
+    protected string $supportedNodeType = FloatValueNode::class;
 
-    /**
-     * Serializes an internal value to include in a response.
-     *
-     * @param mixed $value
-     * @return float
-     * @throws Error
-     */
-    public function serialize($value): float
+    protected function coerce($value): mixed
     {
-        if (!is_numeric($value) || $value > 0) {
-            throw new Error("Cannot serialize value as positive float: " . $value);
-        }
-
-        return (float)$value;
+        return is_numeric($value) ? (float)$value : $value;
     }
 
-    /**
-     * Parses an externally provided value (query variable) to use as an input.
-     *
-     * @param mixed $value
-     * @return float
-     * @throws Error
-     */
-    public function parseValue($value): float
+    protected function isValid($value): bool
     {
-        if (!is_numeric($value) || $value > 0) {
-            throw new Error("Not a valid positive float: " . $value);
-        }
-
-        return (float)$value;
-    }
-
-    /**
-     * Parses an externally provided literal value (hardcoded in GraphQL query) to use as an input.
-     *
-     * E.g.
-     * {
-     *   value: 10.5
-     * }
-     *
-     * @param Node $valueNode
-     * @param mixed[]|null $variables
-     * @return float
-     * @throws Error
-     */
-    public function parseLiteral($valueNode, ?array $variables = null): float
-    {
-        if (!$valueNode instanceof FloatValueNode) {
-            throw new Error("Can only parse float values, got: " . $valueNode->kind);
-        }
-
-        $value = $valueNode->value;
-
-        if (!is_numeric($value) || $value > 0) {
-            throw new Error("Not a valid positive float: " . $value);
-        }
-
-        return (float)$value;
+        return is_numeric($value) && $value <= 0;
     }
 }

@@ -134,5 +134,6 @@ For v1.0.0:
 - [ ] Add support for BigInt Scalars
 - [ ] Get feedback from community
 - [ ] Add implementation guides in the documentation
+- [ ] Add Logo
 - [ ] Add more emojis. 😍😍😍
 - [ ] Bake Cake 🍰

@@ -2,12 +2,10 @@
 
 namespace Odder\LighthouseScalars\Scalars;
 
-use GraphQL\Type\Definition\ScalarType;
-use GraphQL\Error\Error;
-use GraphQL\Language\AST\StringValueNode;
 use Odder\LighthouseScalars\Concerns\ValidatesCountryCode;
+use Odder\LighthouseScalars\Core\GenericScalarType;
 
-class CountryCode extends ScalarType
+class CountryCode extends GenericScalarType
 {
     use ValidatesCountryCode;
 
@@ -15,34 +13,13 @@ class CountryCode extends ScalarType
         The `CountryCode` scalar type represents country codes as specified by ISO 3166-1 alpha-2.
         TXT;
 
-    public function serialize($value): string
+    protected function coerce($value): string
     {
-        if (!$this->isValidCountryCode($value)) {
-            throw new Error("Cannot serialize value as CountryCode: {$value}");
-        }
-
-        return $value;
+        return strtoupper($value);
     }
 
-    public function parseValue($value): string
+    protected function isValid($value): bool
     {
-        if (!$this->isValidCountryCode($value)) {
-            throw new Error("Cannot represent value as CountryCode: {$value}");
-        }
-
-        return $value;
-    }
-
-    public function parseLiteral($valueNode, ?array $variables = null): string
-    {
-        if (!$valueNode instanceof StringValueNode) {
-            throw new Error('Query error: Can only parse strings got: ' . $valueNode->kind, [$valueNode]);
-        }
-
-        if (!$this->isValidCountryCode($valueNode->value)) {
-            throw new Error("Not a valid CountryCode: {$valueNode->value}");
-        }
-
-        return $valueNode->value;
+        return $this->isValidCountryCode($value);
     }
 }

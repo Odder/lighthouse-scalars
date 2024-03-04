@@ -2,9 +2,10 @@
 
 namespace Odder\LighthouseScalars\Scalars;
 
-use GraphQL\Type\Definition\ScalarType;
 use GraphQL\Error\Error;
+use GraphQL\Language\AST\Node;
 use GraphQL\Language\AST\StringValueNode;
+use GraphQL\Type\Definition\ScalarType;
 use Odder\LighthouseScalars\Concerns\ValidatesCountryCode;
 use Odder\LighthouseScalars\Concerns\ValidatesLanguageCode;
 
@@ -39,6 +40,25 @@ class Locale extends ScalarType
     }
 
     /**
+     * Validates if the provided string is a valid locale identifier.
+     *
+     * @param string $locale
+     * @return bool
+     */
+    private function isValidLocale(string $locale): bool
+    {
+        $parts = explode('-', $locale);
+
+        if (count($parts) > 2) {
+            return false;
+        }
+
+        $language = $parts[0];
+        $country = $parts[1] ?? '';
+        return $this->isValidLanguageCode($language) && ($country === '' || $this->isValidCountryCode($country));
+    }
+
+    /**
      * Parses an externally provided value (query variable) to use as an input.
      *
      * @param mixed $value
@@ -58,7 +78,7 @@ class Locale extends ScalarType
     /**
      * Parses an externally provided literal value (hardcoded in GraphQL query) to use as an input.
      *
-     * @param \GraphQL\Language\AST\Node $valueNode
+     * @param Node $valueNode
      * @param mixed[]|null $variables
      * @return string
      * @throws Error
@@ -75,24 +95,5 @@ class Locale extends ScalarType
         }
 
         return $value;
-    }
-
-    /**
-     * Validates if the provided string is a valid locale identifier.
-     *
-     * @param string $locale
-     * @return bool
-     */
-    private function isValidLocale(string $locale): bool
-    {
-        $parts = explode('-', $locale);
-
-        if (count($parts) > 2) {
-            return false;
-        }
-
-        $language = $parts[0];
-        $country = $parts[1] ?? '';
-        return $this->isValidLanguageCode($language) && ($country === '' || $this->isValidCountryCode($country));
     }
 }
