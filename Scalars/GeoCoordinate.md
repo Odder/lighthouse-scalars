@@ -1,5 +1,7 @@
 # GeoCoordinate
 
+### Description
+
 ** SHOULD NOT BE USED DIRECTLY **
 
 A float value representing a geographic coordinate. The value must be within the range of -90 to 90 for latitude and -180 to 180 for longitude.
