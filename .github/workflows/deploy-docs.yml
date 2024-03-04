@@ -1,0 +1,31 @@
+name: CI/CD
+on:
+  pull_request:
+  push:
+    branches: 
+      - "*"
+    tags:
+      - "*"
+
+jobs:
+  update-gh-pages:
+    name: Generate and upload new GitHub Pages
+    runs-on: ubuntu-latest
+    concurrency: github-pages
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Run action
+        uses: ldeluigi/markdown-docs@latest
+        with:
+          src: ./docs
+          dst: ./generated_docs
+          title: Lighthouse Scalars
+          language: en
+      - name: Deploy GH Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./generated_docs
