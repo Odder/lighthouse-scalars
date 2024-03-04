@@ -1,13 +1,12 @@
 # Lighthouse Scalars
 
-This package provides a set of custom scalars for the [webonyx/graphql-php](https://github.com/webonyx/graphql-php) library, which is used under the hood by [Lighthouse](https://lighthouse-php.com/), a PHP port of the popular [GraphQL](https://graphql.org/) server.
-
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/odder/lighthouse-scalars.svg?style=flat-square)](https://packagist.org/packages/odder/lighthouse-scalars)
 [![PHP version](https://img.shields.io/packagist/php-v/odder/lighthouse-scalars?style=flat-square)]()
 [![webonyx/graphql-php](https://img.shields.io/badge/graphql--php-^15.0.0-blue?style=flat-square)]()
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/odder/lighthouse-scalars/Tests?label=tests&style=flat-square)]()
 [![Total Downloads](https://img.shields.io/packagist/dt/odder/lighthouse-scalars.svg?style=flat-square)](https://packagist.org/packages/odder/lighthouse-scalars)
 [![License](https://img.shields.io/packagist/l/odder/lighthouse-scalars?style=flat-square)](https://packagist.org/packages/odder/lighthouse-scalars)
+
+This package provides a set of custom scalars for the [webonyx/graphql-php](https://github.com/webonyx/graphql-php) library, which is used under the hood by [Lighthouse](https://lighthouse-php.com/), a PHP port of the popular [GraphQL](https://graphql.org/) server.
 
 
 ## Supported Scalars

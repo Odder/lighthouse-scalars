@@ -9,6 +9,8 @@ use GraphQL\Language\AST\Node;
 
 class GeoCoordinate extends ScalarType
 {
+    public float $limit = 180;
+
     public ?string $description = <<<TXT
         The `GeoCoordinate` scalar type represents geographic coordinates.
         Inputs can be in decimal (53.471) or sexagesimal (53° 28' 36") format.
@@ -28,9 +30,11 @@ class GeoCoordinate extends ScalarType
     public function parseValue($value): float
     {
         if ($this->isSexagesimal($value)) {
-            return $this->convertSexagesimalToDecimal($value);
-        } elseif ($this->isValidDecimal($value)) {
-            return (float)$value;
+            $value = $this->convertSexagesimalToDecimal($value);
+        }
+
+        if ($this->isValidDecimal($value)) {
+            return (float) $value;
         } else {
             throw new Error("Cannot represent value as GeoCoordinate: {$value}");
         }
@@ -47,7 +51,7 @@ class GeoCoordinate extends ScalarType
 
     protected function isValidDecimal($value): bool
     {
-        return is_numeric($value) && $value >= -180 && $value <= 180;
+        return is_numeric($value) && $value >= -$this->limit && $value <= $this->limit;
     }
 
     protected function isSexagesimal($value): bool
@@ -59,9 +63,9 @@ class GeoCoordinate extends ScalarType
     {
         preg_match('/^(\d+)° ?(\d+)\' ?(\d+)"/', $value, $matches);
         $degrees = (int) $matches[1];
-        $minutes = (int) $matches[2];
-        $seconds = (int) $matches[3];
+        $degrees += ((int) $matches[2]) / 60;
+        $degrees += ((int) $matches[3]) / 3600;
 
-        return $degrees + ($minutes / 60) + ($seconds / 3600);
+        return $degrees;
     }
 }
