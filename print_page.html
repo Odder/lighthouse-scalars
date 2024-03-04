@@ -263,6 +263,54 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Scalars
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Scalars" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Scalars
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Scalars/CountryCode.html" class="md-nav__link">
+        Country Code
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
     <li class="md-nav__item">
       
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
@@ -295,6 +343,26 @@
   <a href="#" class="md-nav__link">
     1. Lighthouse Scalar
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-scalars" class="md-nav__link">
+    I. Scalars
+  </a>
+  
+    <nav class="md-nav" aria-label="I. Scalars">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scalars-countrycode" class="md-nav__link">
+    2. Country Code
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -337,6 +405,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#section-scalars" class="md-nav__link">
+    I. Scalars
+  </a>
+  
+    <nav class="md-nav" aria-label="I. Scalars">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scalars-countrycode" class="md-nav__link">
+    2. Country Code
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -375,7 +463,43 @@
             </div>
         </section>
         <section class="print-page" id="index"><h1 id="index-lighthouse-scalar">Lighthouse Scalar</h1>
-<p>This package provides a set of custom scalars for use with <a href="https://lighthouse-php.com/">Lighthouse</a>, a PHP port of the popular <a href="https://graphql.org/">GraphQL</a> server.</p></section></div>
+<p>This package provides a set of custom scalars for use with <a href="https://lighthouse-php.com/">Lighthouse</a>, a PHP port of the popular <a href="https://graphql.org/">GraphQL</a> server.</p></section>
+                        <h1 class='nav-section-title' id='section-scalars'>
+                            Scalars <a class='headerlink' href='#section-scalars' title='Permanent link'>↵</a>
+                        </h1>
+                        <section class="print-page" id="scalars-countrycode"><h1 id="scalars-countrycode-country-code">Country Code</h1>
+<p>Following the ISO 3166-1 alpha-2 standard, the country code is a two-letter code that represents a country. The following table lists the country codes for all countries and territories.</p>
+<p>Examples:
+- <code>US</code> - United States
+- <code>CA</code> - Canada
+- <code>GB</code> - United Kingdom
+- <code>FR</code> - France</p>
+<h3 id="scalars-countrycode-usage">Usage</h3>
+<div class="highlight"><pre><span></span><code>type Query {
+  country(code: CountryCode!): Country!
+}
+
+type Country {
+  name: String!
+  code: CountryCode!
+}
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>query {
+  country(code: &quot;US&quot;) {
+    name
+    code
+  }
+}
+
+# {
+#   &quot;data&quot;: {
+#     &quot;country&quot;: {
+#       &quot;name&quot;: &quot;United States&quot;,
+#       &quot;code&quot;: &quot;US&quot;
+#     }
+#   }
+# }
+</code></pre></div></section><h1 class='nav-section-title-end'>Ended: Scalars</h1></div>
 
 
 
