@@ -7,8 +7,8 @@ The `NegativeInteger` scalar type represents a negative integer. 0 is considered
 Examples:
 
 - `0`
-- `1`
-- `2`
+- `-1`
+- `-2`
 
 ### Coercions
 

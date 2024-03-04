@@ -100,7 +100,7 @@ composer test
 
 ## Documentation
 
-For more information on how to use each scalar, please refer to the [documentation](https://odder.github.io/lighthouse-scalars/docs).
+For more information on how to use each scalar, please refer to the [documentation](https://lighthouse-scalars.odder.dev/docs).
 
 ## Contributing
 
