@@ -122,3 +122,17 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 ## Security
 
 If you discover any security-related issues, please email hi@odder.dev instead of using the issue tracker.
+
+## Roadmap
+
+For v1.0.0:
+
+- [ ] Clean up scalar classes
+- [ ] Clean up Tests
+- [ ] Clean up Docs
+- [ ] Add support for Time/Date scalars
+- [ ] Add support for BigInt Scalars
+- [ ] Get feedback from community
+- [ ] Add implementation guides in the documentation
+- [ ] Add more emojis. 😍😍😍
+- [ ] Bake Cake 🍰
