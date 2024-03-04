@@ -18,10 +18,12 @@ jobs:
         with:
           fetch-depth: 0
       - name: Run action
-        uses: ./
+        uses: ldeluigi/markdown-docs@latest
         with:
           src: ./docs
           dst: ./generated_docs
+          title: Lighthouse Scalars
+          language: en
       - name: Deploy GH Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
