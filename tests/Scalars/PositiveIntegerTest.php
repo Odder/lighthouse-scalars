@@ -1,5 +1,6 @@
 <?php
 
+use GraphQL\Language\AST\StringValueNode;
 use Odder\LighthouseScalars\Scalars\PositiveInteger;
 use GraphQL\Language\AST\IntValueNode;
 use GraphQL\Error\Error;
@@ -57,6 +58,16 @@ test('parses literal positive integers correctly', function () {
 test('rejects non-positive integers and non-integer literals', function () {
     $invalidValues = [
         new IntValueNode(['value' => '-1']),
+    ];
+
+    foreach ($invalidValues as $valueNode) {
+        expect(fn() => $this->scalar->parseLiteral($valueNode, null))->toThrow(Error::class);
+    }
+});
+
+test('rejects StringValueNode', function () {
+    $invalidValues = [
+        new StringValueNode(['value' => '-1']),
     ];
 
     foreach ($invalidValues as $valueNode) {

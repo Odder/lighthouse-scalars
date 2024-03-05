@@ -19,7 +19,7 @@ test('serializes valid country codes correctly', function () {
 
 test('rejects invalid country codes during serialization', function () {
     $invalidCodes = [
-        'XX', 'afr', '', 'da_XX',
+        'XX', 'afr', '', 'da_XX, en-US-XX',
     ];
 
     foreach ($invalidCodes as $code) {
