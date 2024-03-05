@@ -384,12 +384,60 @@
       
       
         <label class="md-nav__link" for="__nav_2">
+          Custom Scalars
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Custom Scalars" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Custom Scalars
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Custom%20Scalars/GenericScalarType.html" class="md-nav__link">
+        GenericScalarType
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
           Scalars
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Scalars" data-md-level="1">
-        <label class="md-nav__title" for="__nav_2">
+        <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           Scalars
         </label>
@@ -835,35 +883,47 @@
 <p>This package provides a set of custom scalars for the <a href="https://github.com/webonyx/graphql-php">webonyx/graphql-php</a> library, which is used under the hood by <a href="https://lighthouse-php.com/">Lighthouse</a>, a PHP port of the popular <a href="https://graphql.org/">GraphQL</a> server.</p>
 <h2 id="supported-scalars">Supported Scalars</h2>
 <p>The following scalars are supported:</p>
-<p>😍😍😍:
-- <code>Emoji</code> - see <a href="https://en.wikipedia.org/wiki/Emoji">Emoji</a></p>
-<p>Numbers:
-- <code>PositiveFloat</code> - see <a href="https://en.wikipedia.org/wiki/Natural_number">Positive number</a>
-- <code>NegativeFloat</code> - see <a href="https://en.wikipedia.org/wiki/Negative_number">Negative number</a>
-- <code>PositiveInt</code> - see <a href="https://en.wikipedia.org/wiki/Natural_number">Positive integer</a>
-- <code>NegativeInt</code></p>
-<p>Localization:
-- <code>CurrencyCode</code> - see <a href="https://en.wikipedia.org/wiki/ISO_4217">ISO 4217 alpha-3</a>
-- <code>CountryCode</code> - see <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1 alpha-2</a>
-- <code>Email</code> - see <a href="https://tools.ietf.org/html/rfc5322">RFC 5322</a>
-- <code>LanguageCode</code> - see <a href="https://en.wikipedia.org/wiki/ISO_639-1">ISO 639-1</a>
-- <code>Locale</code> - Simple locale string. see <a href="https://en.wikipedia.org/wiki/Locale_(computer_software)">Locale</a> (<code>en</code>, <code>en-US</code>, <code>en-GB</code>, <code>fr</code>, <code>fr-FR</code>, <code>fr-CA</code>, etc.)</p>
-<p>Geography:
-- <code>Latitude</code> - Extends GeoCoordinate. see <a href="https://en.wikipedia.org/wiki/Latitude">Latitude</a>
-- <code>Longitude</code> - Extends GeoCoordinate. see <a href="https://en.wikipedia.org/wiki/Longitude">Longitude</a>
-- <code>GeoCoordinate</code> - see <a href="https://en.wikipedia.org/wiki/Geographic_coordinate_system">Geographic coordinate system</a>
-- <code>CountryCode</code> - see <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1 alpha-2</a></p>
-<p>Internet:
-- <code>URL</code> - see <a href="https://en.wikipedia.org/wiki/URL">URL</a>
-- <code>URI</code> - see <a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">URI</a>
-- <code>IPv4</code> - see <a href="https://en.wikipedia.org/wiki/IPv4">IPv4</a>
-- <code>IPv6</code> - see <a href="https://en.wikipedia.org/wiki/IPv6">IPv6</a>
-- <code>SemVer</code> - see <a href="https://semver.org/">Semantic Versioning</a>
-- <code>UUID</code> - Using UUID4. see <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">UUID</a></p>
-<p>Markup:
-- <code>JSON</code> - see <a href="https://en.wikipedia.org/wiki/JSON">JSON</a>
-- <code>HTML</code> - Sanitised using <a href="http://htmlpurifier.org/">HTML Purifier</a> to prevent XSS attacks. see <a href="https://en.wikipedia.org/wiki/HTML">HTML</a>
-- <code>Markdown</code> - see <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a></p>
+<p>😍😍😍:</p>
+<ul>
+<li><code>Emoji</code> - see <a href="https://en.wikipedia.org/wiki/Emoji">Emoji</a></li>
+</ul>
+<p>Numbers:</p>
+<ul>
+<li><code>PositiveFloat</code> - see <a href="https://en.wikipedia.org/wiki/Natural_number">Positive number</a></li>
+<li><code>NegativeFloat</code> - see <a href="https://en.wikipedia.org/wiki/Negative_number">Negative number</a></li>
+<li><code>PositiveInt</code> - see <a href="https://en.wikipedia.org/wiki/Natural_number">Positive integer</a></li>
+<li><code>NegativeInt</code></li>
+</ul>
+<p>Localization:</p>
+<ul>
+<li><code>CurrencyCode</code> - see <a href="https://en.wikipedia.org/wiki/ISO_4217">ISO 4217 alpha-3</a></li>
+<li><code>CountryCode</code> - see <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1 alpha-2</a></li>
+<li><code>Email</code> - see <a href="https://tools.ietf.org/html/rfc5322">RFC 5322</a></li>
+<li><code>LanguageCode</code> - see <a href="https://en.wikipedia.org/wiki/ISO_639-1">ISO 639-1</a></li>
+<li><code>Locale</code> - Simple locale string. see <a href="https://en.wikipedia.org/wiki/Locale_(computer_software)">Locale</a> (<code>en</code>, <code>en-US</code>, <code>en-GB</code>, <code>fr</code>, <code>fr-FR</code>, <code>fr-CA</code>, etc.)</li>
+</ul>
+<p>Geography:</p>
+<ul>
+<li><code>Latitude</code> - Extends GeoCoordinate. see <a href="https://en.wikipedia.org/wiki/Latitude">Latitude</a></li>
+<li><code>Longitude</code> - Extends GeoCoordinate. see <a href="https://en.wikipedia.org/wiki/Longitude">Longitude</a></li>
+<li><code>GeoCoordinate</code> - see <a href="https://en.wikipedia.org/wiki/Geographic_coordinate_system">Geographic coordinate system</a></li>
+<li><code>CountryCode</code> - see <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1 alpha-2</a></li>
+</ul>
+<p>Internet:</p>
+<ul>
+<li><code>URL</code> - see <a href="https://en.wikipedia.org/wiki/URL">URL</a></li>
+<li><code>URI</code> - see <a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">URI</a></li>
+<li><code>IPv4</code> - see <a href="https://en.wikipedia.org/wiki/IPv4">IPv4</a></li>
+<li><code>IPv6</code> - see <a href="https://en.wikipedia.org/wiki/IPv6">IPv6</a></li>
+<li><code>SemVer</code> - see <a href="https://semver.org/">Semantic Versioning</a></li>
+<li><code>UUID</code> - Using UUID4. see <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">UUID</a></li>
+</ul>
+<p>Markup:</p>
+<ul>
+<li><code>JSON</code> - see <a href="https://en.wikipedia.org/wiki/JSON">JSON</a></li>
+<li><code>HTML</code> - Sanitised using <a href="http://htmlpurifier.org/">HTML Purifier</a> to prevent XSS attacks. see <a href="https://en.wikipedia.org/wiki/HTML">HTML</a></li>
+<li><code>Markdown</code> - see <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a></li>
+</ul>
 <h2 id="installation">Installation</h2>
 <p>You can install the package via composer:</p>
 <div class="highlight"><pre><span></span><code>composer require odder/lighthouse-scalars
@@ -918,7 +978,7 @@
 <h2 id="roadmap">Roadmap</h2>
 <p>For v1.0.0:</p>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Clean up scalar classes</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Clean up scalar classes</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Clean up Tests</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Clean up Docs</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Add support for Time/Date scalars</li>
@@ -935,7 +995,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">March 4, 2024 21:47:25</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">March 5, 2024 21:19:07</span>
       
         <br>
         Created:
@@ -974,13 +1034,13 @@
       
       
         
-        <a href="Scalars/CountryCode.html" class="md-footer__link md-footer__link--next" aria-label="Next: Country Code" rel="next">
+        <a href="Custom%20Scalars/GenericScalarType.html" class="md-footer__link md-footer__link--next" aria-label="Next: GenericScalarType" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Country Code
+              GenericScalarType
             </div>
           </div>
           <div class="md-footer__button md-icon">

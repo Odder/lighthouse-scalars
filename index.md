@@ -14,15 +14,18 @@ This package provides a set of custom scalars for the [webonyx/graphql-php](http
 The following scalars are supported:
 
 😍😍😍:
+
 - `Emoji` - see [Emoji](https://en.wikipedia.org/wiki/Emoji)
 
 Numbers:
+
 - `PositiveFloat` - see [Positive number](https://en.wikipedia.org/wiki/Natural_number)
 - `NegativeFloat` - see [Negative number](https://en.wikipedia.org/wiki/Negative_number)
 - `PositiveInt` - see [Positive integer](https://en.wikipedia.org/wiki/Natural_number)
 - `NegativeInt`
 
 Localization:
+
 - `CurrencyCode` - see [ISO 4217 alpha-3](https://en.wikipedia.org/wiki/ISO_4217)
 - `CountryCode` - see [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
 - `Email` - see [RFC 5322](https://tools.ietf.org/html/rfc5322)
@@ -30,12 +33,14 @@ Localization:
 - `Locale` - Simple locale string. see [Locale](https://en.wikipedia.org/wiki/Locale_(computer_software)) (`en`, `en-US`, `en-GB`, `fr`, `fr-FR`, `fr-CA`, etc.)
 
 Geography:
+
 - `Latitude` - Extends GeoCoordinate. see [Latitude](https://en.wikipedia.org/wiki/Latitude)
 - `Longitude` - Extends GeoCoordinate. see [Longitude](https://en.wikipedia.org/wiki/Longitude)
 - `GeoCoordinate` - see [Geographic coordinate system](https://en.wikipedia.org/wiki/Geographic_coordinate_system)
 - `CountryCode` - see [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
 
 Internet:
+
 - `URL` - see [URL](https://en.wikipedia.org/wiki/URL)
 - `URI` - see [URI](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier)
 - `IPv4` - see [IPv4](https://en.wikipedia.org/wiki/IPv4)
@@ -44,6 +49,7 @@ Internet:
 - `UUID` - Using UUID4. see [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier)
 
 Markup:
+
 - `JSON` - see [JSON](https://en.wikipedia.org/wiki/JSON)
 - `HTML` - Sanitised using [HTML Purifier](http://htmlpurifier.org/) to prevent XSS attacks. see [HTML](https://en.wikipedia.org/wiki/HTML)
 - `Markdown` - see [Markdown](https://en.wikipedia.org/wiki/Markdown)
@@ -127,7 +133,7 @@ If you discover any security-related issues, please email hi@odder.dev instead o
 
 For v1.0.0:
 
-- [ ] Clean up scalar classes
+- [x] Clean up scalar classes
 - [ ] Clean up Tests
 - [ ] Clean up Docs
 - [ ] Add support for Time/Date scalars
