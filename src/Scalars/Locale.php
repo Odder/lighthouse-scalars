@@ -24,7 +24,12 @@ class Locale extends GenericScalarType
 
     protected function coerce($value): string
     {
-        return str_replace('_', '-', $value);
+        $value  = str_replace('_', '-', $value);
+        $parts = explode('-', $value);
+
+        $language = strtolower($parts[0]);
+        $country = strtoupper($parts[1] ?? '');
+        return $language . ($country === '' ? '' : '-' . $country);
     }
 
     protected function isValid($value): bool

@@ -12,9 +12,13 @@ class GenericScalarType extends ScalarType
 
     public function serialize($value): mixed
     {
-        $value = $this->coerceOut($value);
+        try {
+            $value = $this->coerceOut($value);
 
-        if (!$this->isValidOut($value)) {
+            if (!$this->isValidOut($value)) {
+                throw new \Exception();
+            }
+        } catch (\Throwable $e) {
             $className = self::class;
             throw new Error("Cannot serialize value as {$className}: {$value}");
         }
@@ -24,9 +28,13 @@ class GenericScalarType extends ScalarType
 
     public function parseValue($value): mixed
     {
-        $value = $this->coerce($value);
+        try {
+            $value = $this->coerce($value);
 
-        if (!$this->isValid($value)) {
+            if (!$this->isValid($value)) {
+                throw new \Exception();
+            }
+        } catch (\Throwable $e) {
             $className = self::class;
             throw new Error("Cannot represent value as {$className}: {$value}");
         }
@@ -36,15 +44,15 @@ class GenericScalarType extends ScalarType
 
     public function parseLiteral($valueNode, ?array $variables = null): mixed
     {
-        if (!$valueNode instanceof $this->supportedNodeType) {
-            throw new Error('Query error: Cannot parse this type: ' . $valueNode->kind, [$valueNode]);
-        }
+        try {
+            $value = $this->coerce($valueNode->value);
 
-        $value = $this->coerce($valueNode->value);
-
-        if (!$this->isValid($value)) {
+            if (!$this->isValid($value)) {
+                throw new \Exception();
+            }
+        } catch (\Throwable $e) {
             $className = self::class;
-            throw new Error("Not a valid {$className}: {$value}");
+            throw new Error("Cannot represent value as {$className}: {$valueNode->value}");
         }
 
         return $value;
