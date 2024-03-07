@@ -58,11 +58,11 @@ class RomanNumeral extends GenericScalarType
 
 ### supportedNodeType
 
-`protected string $supportedNodeType = StringValueNode::class`
+`protected string $supportedNodeType = ValueNode::class`
 
 The AST node type that this scalar supports. This is used to validate the input type for literals.
 
-By default, this is set to `StringValueNode::class`.
+By default, this is set to `ValueNode::class`.
 
 ### description
 
