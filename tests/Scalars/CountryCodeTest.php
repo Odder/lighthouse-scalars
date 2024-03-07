@@ -23,7 +23,7 @@ test('rejects invalid country codes during serialization', function () {
     ];
 
     foreach ($invalidCodes as $code) {
-        expect(fn() => $this->scalar->serialize($code))->toThrow(GraphQL\Error\Error::class);
+        expect(fn() => $this->scalar->serialize($code))->toThrow(\GraphQL\Error\InvariantViolation::class);
     }
 });
 

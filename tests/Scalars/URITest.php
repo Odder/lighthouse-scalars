@@ -29,7 +29,7 @@ test('rejects invalid URIs during serialization', function () {
     ];
 
     foreach ($invalidUris as $uri) {
-        expect(fn() => $this->scalar->serialize($uri))->toThrow(GraphQL\Error\Error::class);
+        expect(fn() => $this->scalar->serialize($uri))->toThrow(\GraphQL\Error\InvariantViolation::class);
     }
 });
 

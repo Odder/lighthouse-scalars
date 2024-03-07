@@ -22,7 +22,7 @@ test('throws error for invalid ISO 639-1 codes', function () {
     $invalidCodes = ['eng', 'f', '123', 'xx'];
     foreach ($invalidCodes as $code) {
         $nodeValue = new StringValueNode(['value' => $code]);
-        expect(fn() => $this->scalar->serialize($code))->toThrow(Error::class);
+        expect(fn() => $this->scalar->serialize($code))->toThrow(\GraphQL\Error\InvariantViolation::class);
         expect(fn() => $this->scalar->parseValue($code))->toThrow(Error::class);
         expect(fn() => $this->scalar->parseLiteral($nodeValue, null))->toThrow(Error::class);
     }

@@ -31,7 +31,7 @@ test('rejects invalid SemVer formatted strings during serialization', function (
     ];
 
     foreach ($invalidVersions as $version) {
-        expect(fn() => $this->scalar->serialize($version))->toThrow(GraphQL\Error\Error::class);
+        expect(fn() => $this->scalar->serialize($version))->toThrow(\GraphQL\Error\InvariantViolation::class);
     }
 });
 

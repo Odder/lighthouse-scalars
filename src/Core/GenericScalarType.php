@@ -2,13 +2,14 @@
 
 namespace Odder\LighthouseScalars\Core;
 
+use GraphQL\Error\InvariantViolation;
+use GraphQL\Language\AST\ValueNode;
 use GraphQL\Type\Definition\ScalarType;
 use GraphQL\Error\Error;
-use GraphQL\Language\AST\StringValueNode;
 
 class GenericScalarType extends ScalarType
 {
-    protected string $supportedNodeType = StringValueNode::class;
+    protected string $supportedNodeType = ValueNode::class;
 
     public function serialize($value): mixed
     {
@@ -20,7 +21,8 @@ class GenericScalarType extends ScalarType
             }
         } catch (\Throwable $e) {
             $className = self::class;
-            throw new Error("Cannot serialize value as {$className}: {$value}");
+            $value = is_scalar($value) ? $value : gettype($value);
+            throw new InvariantViolation("Cannot serialize value as {$className}: {$value}");
         }
 
         return $value;
@@ -34,7 +36,7 @@ class GenericScalarType extends ScalarType
             if (!$this->isValid($value)) {
                 throw new \Exception();
             }
-        } catch (\Throwable $e) {
+        } catch (\Throwable) {
             $className = self::class;
             throw new Error("Cannot represent value as {$className}: {$value}");
         }
@@ -45,6 +47,10 @@ class GenericScalarType extends ScalarType
     public function parseLiteral($valueNode, ?array $variables = null): mixed
     {
         try {
+            if (!$valueNode instanceof $this->supportedNodeType) {
+                throw new \Exception;
+            }
+
             $value = $this->coerce($valueNode->value);
 
             if (!$this->isValid($value)) {
@@ -60,7 +66,7 @@ class GenericScalarType extends ScalarType
 
     protected function coerce($value): mixed
     {
-        return (string) $value;
+        return $value;
     }
 
     protected function coerceOut($value): mixed

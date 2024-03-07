@@ -14,7 +14,7 @@ test('serializes decimal coordinates correctly', function () {
 
 test('rejects invalid decimal coordinates during serialization', function () {
     $invalidDecimal = 181; // Out of valid range
-    expect(fn() => $this->scalar->serialize($invalidDecimal))->toThrow(GraphQL\Error\Error::class);
+    expect(fn() => $this->scalar->serialize($invalidDecimal))->toThrow(\GraphQL\Error\InvariantViolation::class);
 });
 
 test('parses decimal coordinates correctly', function () {

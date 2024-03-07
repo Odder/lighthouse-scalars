@@ -25,7 +25,7 @@ test('rejects non-positive integers during serialization', function () {
     ];
 
     foreach ($invalidIntegers as $integer) {
-        expect(fn() => $this->scalar->serialize($integer))->toThrow(Error::class);
+        expect(fn() => $this->scalar->serialize($integer))->toThrow(\GraphQL\Error\InvariantViolation::class);
     }
 });
 

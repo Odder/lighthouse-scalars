@@ -29,7 +29,7 @@ test('rejects invalid IPv4 addresses during serialization', function () {
     ];
 
     foreach ($invalidAddresses as $address) {
-        expect(fn() => $this->scalar->serialize($address))->toThrow(GraphQL\Error\Error::class);
+        expect(fn() => $this->scalar->serialize($address))->toThrow(\GraphQL\Error\InvariantViolation::class);
     }
 });
 

@@ -24,7 +24,7 @@ test('rejects negative floats during serialization', function () {
     ];
 
     foreach ($invalidFloats as $float) {
-        expect(fn() => $this->scalar->serialize($float))->toThrow(Error::class);
+        expect(fn() => $this->scalar->serialize($float))->toThrow(\GraphQL\Error\InvariantViolation::class);
     }
 });
 

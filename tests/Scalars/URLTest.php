@@ -28,7 +28,7 @@ test('rejects invalid URLs during serialization', function () {
     ];
 
     foreach ($invalidUrls as $url) {
-        expect(fn() => $this->scalar->serialize($url))->toThrow(GraphQL\Error\Error::class);
+        expect(fn() => $this->scalar->serialize($url))->toThrow(\GraphQL\Error\InvariantViolation::class);
     }
 });
 

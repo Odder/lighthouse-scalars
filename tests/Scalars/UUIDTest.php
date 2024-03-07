@@ -21,7 +21,7 @@ test('rejects invalid UUID strings during serialization', function () {
     ];
 
     foreach ($invalidUUIDs as $uuid) {
-        expect(fn() => $this->scalar->serialize($uuid))->toThrow(GraphQL\Error\Error::class);
+        expect(fn() => $this->scalar->serialize($uuid))->toThrow(\GraphQL\Error\InvariantViolation::class);
     }
 });
 

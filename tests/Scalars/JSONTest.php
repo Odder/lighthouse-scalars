@@ -16,7 +16,7 @@ test('serializes JSON correctly', function () {
 test('rejects invalid JSON during serialization', function () {
     // Use an invalid UTF8 sequence to force a JSON encoding error.
     $value = ["key" => "\xB1\x31"];
-    expect(fn() => $this->scalar->serialize($value))->toThrow(GraphQL\Error\Error::class);
+    expect(fn() => $this->scalar->serialize($value))->toThrow(\GraphQL\Error\InvariantViolation::class);
 });
 
 test('parses JSON strings correctly', function () {

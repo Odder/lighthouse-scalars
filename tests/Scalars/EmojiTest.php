@@ -20,11 +20,11 @@ test('throws error for invalid emoji input', function () {
 
     $invalidEmoji = 'Hello 😊';
     $emojiScalar->serialize($invalidEmoji);
-})->throws(Error::class);
+})->throws(\GraphQL\Error\InvariantViolation::class);
 
 test('throws error for non-emoji input', function () {
     $emojiScalar = new Emoji();
 
     $nonEmoji = 'Hello';
     $emojiScalar->serialize($nonEmoji);
-})->throws(Error::class);
+})->throws(\GraphQL\Error\InvariantViolation::class);

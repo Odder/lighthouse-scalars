@@ -27,7 +27,7 @@ test('rejects invalid IPv6 addresses during serialization', function () {
     ];
 
     foreach ($invalidIPv6s as $ipv6) {
-        expect(fn() => $this->scalar->serialize($ipv6))->toThrow(GraphQL\Error\Error::class);
+        expect(fn() => $this->scalar->serialize($ipv6))->toThrow(\GraphQL\Error\InvariantViolation::class);
     }
 });
 
