@@ -13,7 +13,7 @@
     
     
       
-        <title>Lighthouse Scalars</title>
+        <title>Custom Scalar Types - Lighthouse Scalars</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lighthouse-scalars" class="md-skip">
+        <a href="#custom-scalar-types" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lighthouse Scalars
+              Custom Scalar Types
             
           </span>
         </div>
@@ -241,6 +241,21 @@
 
   
   
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        Lighthouse Scalars
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
     
   
   
@@ -253,12 +268,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Lighthouse Scalars
+          Custom Scalar Types
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="index.html" class="md-nav__link md-nav__link--active">
-        Lighthouse Scalars
+      <a href="GenericScalarType.html" class="md-nav__link md-nav__link--active">
+        Custom Scalar Types
       </a>
       
         
@@ -277,37 +292,30 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#supported-scalars" class="md-nav__link">
-    Supported Scalars
+  <a href="#description" class="md-nav__link">
+    Description
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
-    Installation
+  <a href="#genericscalartype" class="md-nav__link">
+    GenericScalarType
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#usage" class="md-nav__link">
-    Usage
-  </a>
-  
-    <nav class="md-nav" aria-label="Usage">
+    <nav class="md-nav" aria-label="GenericScalarType">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#using-lighthouse" class="md-nav__link">
-    Using Lighthouse
+  <a href="#simple-example" class="md-nav__link">
+    Simple example
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#testing" class="md-nav__link">
-    Testing
+  <a href="#full-example" class="md-nav__link">
+    Full example
   </a>
   
 </li>
@@ -318,44 +326,138 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#documentation" class="md-nav__link">
-    Documentation
+  <a href="#stringscalartype" class="md-nav__link">
+    StringScalarType
   </a>
+  
+    <nav class="md-nav" aria-label="StringScalarType">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simple-example_1" class="md-nav__link">
+    Simple example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#full-example_1" class="md-nav__link">
+    Full example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#contributing" class="md-nav__link">
-    Contributing
+  <a href="#intscalartype" class="md-nav__link">
+    IntScalarType
   </a>
+  
+    <nav class="md-nav" aria-label="IntScalarType">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simple-example_2" class="md-nav__link">
+    Simple example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#full-example_2" class="md-nav__link">
+    Full example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#license" class="md-nav__link">
-    License
+  <a href="#floatscalartype" class="md-nav__link">
+    FloatScalarType
   </a>
+  
+    <nav class="md-nav" aria-label="FloatScalarType">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simple-example_3" class="md-nav__link">
+    Simple example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#full-example_3" class="md-nav__link">
+    Full example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#credits" class="md-nav__link">
-    Credits
+  <a href="#reference" class="md-nav__link">
+    Reference
+  </a>
+  
+    <nav class="md-nav" aria-label="Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#supportednodetype" class="md-nav__link">
+    supportedNodeType
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#security" class="md-nav__link">
-    Security
+        
+          <li class="md-nav__item">
+  <a href="#description_1" class="md-nav__link">
+    description
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#roadmap" class="md-nav__link">
-    Roadmap
+        
+          <li class="md-nav__item">
+  <a href="#coercevalue" class="md-nav__link">
+    coerce($value)
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coerceoutvalue" class="md-nav__link">
+    coerceOut($value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isvalidvalue" class="md-nav__link">
+    isValid($value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isvalidoutvalue" class="md-nav__link">
+    isValidOut($value)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -363,21 +465,6 @@
   
 </nav>
       
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="GenericScalarType.html" class="md-nav__link">
-        Custom Scalar Types
-      </a>
     </li>
   
 
@@ -918,37 +1005,30 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#supported-scalars" class="md-nav__link">
-    Supported Scalars
+  <a href="#description" class="md-nav__link">
+    Description
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
-    Installation
+  <a href="#genericscalartype" class="md-nav__link">
+    GenericScalarType
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#usage" class="md-nav__link">
-    Usage
-  </a>
-  
-    <nav class="md-nav" aria-label="Usage">
+    <nav class="md-nav" aria-label="GenericScalarType">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#using-lighthouse" class="md-nav__link">
-    Using Lighthouse
+  <a href="#simple-example" class="md-nav__link">
+    Simple example
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#testing" class="md-nav__link">
-    Testing
+  <a href="#full-example" class="md-nav__link">
+    Full example
   </a>
   
 </li>
@@ -959,44 +1039,138 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#documentation" class="md-nav__link">
-    Documentation
+  <a href="#stringscalartype" class="md-nav__link">
+    StringScalarType
   </a>
+  
+    <nav class="md-nav" aria-label="StringScalarType">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simple-example_1" class="md-nav__link">
+    Simple example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#full-example_1" class="md-nav__link">
+    Full example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#contributing" class="md-nav__link">
-    Contributing
+  <a href="#intscalartype" class="md-nav__link">
+    IntScalarType
   </a>
+  
+    <nav class="md-nav" aria-label="IntScalarType">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simple-example_2" class="md-nav__link">
+    Simple example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#full-example_2" class="md-nav__link">
+    Full example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#license" class="md-nav__link">
-    License
+  <a href="#floatscalartype" class="md-nav__link">
+    FloatScalarType
   </a>
+  
+    <nav class="md-nav" aria-label="FloatScalarType">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simple-example_3" class="md-nav__link">
+    Simple example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#full-example_3" class="md-nav__link">
+    Full example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#credits" class="md-nav__link">
-    Credits
+  <a href="#reference" class="md-nav__link">
+    Reference
+  </a>
+  
+    <nav class="md-nav" aria-label="Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#supportednodetype" class="md-nav__link">
+    supportedNodeType
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#security" class="md-nav__link">
-    Security
+        
+          <li class="md-nav__item">
+  <a href="#description_1" class="md-nav__link">
+    description
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#roadmap" class="md-nav__link">
-    Roadmap
+        
+          <li class="md-nav__item">
+  <a href="#coercevalue" class="md-nav__link">
+    coerce($value)
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coerceoutvalue" class="md-nav__link">
+    coerceOut($value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isvalidvalue" class="md-nav__link">
+    isValid($value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isvalidoutvalue" class="md-nav__link">
+    isValidOut($value)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1015,138 +1189,185 @@
   
                   
 
-  <a href="https://github.com/Odder/lighthouse-scalars/edit/main/docs/index.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/Odder/lighthouse-scalars/edit/main/docs/GenericScalarType.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-<h1 id="lighthouse-scalars">Lighthouse Scalars</h1>
-<p><a href="https://packagist.org/packages/odder/lighthouse-scalars"><img alt="Latest Version on Packagist" src="https://img.shields.io/packagist/v/odder/lighthouse-scalars.svg?style=flat-square" /></a>
-<a href=""><img alt="PHP version" src="https://img.shields.io/packagist/php-v/odder/lighthouse-scalars?style=flat-square" /></a>
-<a href=""><img alt="webonyx/graphql-php" src="https://img.shields.io/badge/graphql--php-^15.0.0-blue?style=flat-square" /></a>
-<a href="https://packagist.org/packages/odder/lighthouse-scalars"><img alt="Total Downloads" src="https://img.shields.io/packagist/dt/odder/lighthouse-scalars.svg?style=flat-square" /></a>
-<a href="https://packagist.org/packages/odder/lighthouse-scalars"><img alt="License" src="https://img.shields.io/packagist/l/odder/lighthouse-scalars?style=flat-square" /></a></p>
-<p>This package provides a set of custom scalars for the <a href="https://github.com/webonyx/graphql-php">webonyx/graphql-php</a> library, which is used under the hood by <a href="https://lighthouse-php.com/">Lighthouse</a>, a PHP port of the popular <a href="https://graphql.org/">GraphQL</a> server.</p>
-<h2 id="supported-scalars">Supported Scalars</h2>
-<p>The following scalars are supported:</p>
-<p>😍😍😍:</p>
-<ul>
-<li><code>Emoji</code> - see <a href="https://en.wikipedia.org/wiki/Emoji">Emoji</a></li>
-</ul>
-<p>Numbers:</p>
-<ul>
-<li><code>PositiveFloat</code> - see <a href="https://en.wikipedia.org/wiki/Natural_number">Positive number</a></li>
-<li><code>NegativeFloat</code> - see <a href="https://en.wikipedia.org/wiki/Negative_number">Negative number</a></li>
-<li><code>PositiveInt</code> - see <a href="https://en.wikipedia.org/wiki/Natural_number">Positive integer</a></li>
-<li><code>NegativeInt</code></li>
-</ul>
-<p>Localization:</p>
-<ul>
-<li><code>CurrencyCode</code> - see <a href="https://en.wikipedia.org/wiki/ISO_4217">ISO 4217 alpha-3</a></li>
-<li><code>CountryCode</code> - see <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1 alpha-2</a></li>
-<li><code>Email</code> - see <a href="https://tools.ietf.org/html/rfc5322">RFC 5322</a></li>
-<li><code>LanguageCode</code> - see <a href="https://en.wikipedia.org/wiki/ISO_639-1">ISO 639-1</a></li>
-<li><code>Locale</code> - Simple locale string. see <a href="https://en.wikipedia.org/wiki/Locale_(computer_software)">Locale</a> (<code>en</code>, <code>en-US</code>, <code>en-GB</code>, <code>fr</code>, <code>fr-FR</code>, <code>fr-CA</code>, etc.)</li>
-</ul>
-<p>Geography:</p>
-<ul>
-<li><code>Latitude</code> - Extends GeoCoordinate. see <a href="https://en.wikipedia.org/wiki/Latitude">Latitude</a></li>
-<li><code>Longitude</code> - Extends GeoCoordinate. see <a href="https://en.wikipedia.org/wiki/Longitude">Longitude</a></li>
-<li><code>GeoCoordinate</code> - see <a href="https://en.wikipedia.org/wiki/Geographic_coordinate_system">Geographic coordinate system</a></li>
-<li><code>CountryCode</code> - see <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1 alpha-2</a></li>
-</ul>
-<p>Internet:</p>
-<ul>
-<li><code>URL</code> - see <a href="https://en.wikipedia.org/wiki/URL">URL</a></li>
-<li><code>URI</code> - see <a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">URI</a></li>
-<li><code>IPv4</code> - see <a href="https://en.wikipedia.org/wiki/IPv4">IPv4</a></li>
-<li><code>IPv6</code> - see <a href="https://en.wikipedia.org/wiki/IPv6">IPv6</a></li>
-<li><code>SemVer</code> - see <a href="https://semver.org/">Semantic Versioning</a></li>
-<li><code>UUID</code> - Using UUID4. see <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">UUID</a></li>
-</ul>
-<p>Markup:</p>
-<ul>
-<li><code>JSON</code> - see <a href="https://en.wikipedia.org/wiki/JSON">JSON</a></li>
-<li><code>HTML</code> - Sanitised using <a href="http://htmlpurifier.org/">HTML Purifier</a> to prevent XSS attacks. see <a href="https://en.wikipedia.org/wiki/HTML">HTML</a></li>
-<li><code>Markdown</code> - see <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a></li>
-</ul>
-<h2 id="installation">Installation</h2>
-<p>You can install the package via composer:</p>
-<div class="highlight"><pre><span></span><code>composer require odder/lighthouse-scalars
-</code></pre></div>
-<h2 id="usage">Usage</h2>
-<h3 id="using-lighthouse">Using Lighthouse</h3>
-<p>You can opt-in to the scalars you want by registering them in the <code>TypeRegistry</code> in a service provider. For example, you can register the <code>PositiveFloat</code> and <code>Emoji</code> scalars in the <code>AppServiceProvider</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="x">use Odder\LighthouseScalars\Scalars;</span>
-<span class="x">use Nuwave\Lighthouse\Schema\TypeRegistry;</span>
+<h1 id="custom-scalar-types">Custom Scalar Types</h1>
+<h2 id="description">Description</h2>
+<p>A generic scalar type which support out of box coercing and validation. By default it supports any type of ValueNode (e.g. StringValueNode, IntValueNode, FloatValueNode, BooleanValueNode, NullValueNode, EnumValueNode, ListValueNode, ObjectValueNode). No coercion is applied to the value, and no validation is applied to the value.</p>
+<h2 id="genericscalartype">GenericScalarType</h2>
+<p>A generic scalar type which support out of box coercing and validation. By default it supports any type of ValueNode (e.g. StringValueNode, IntValueNode, FloatValueNode, BooleanValueNode, NullValueNode, EnumValueNode, ListValueNode, ObjectValueNode). No coercion is applied to the value, and no validation is applied to the value.</p>
+<h3 id="simple-example">Simple example</h3>
+<div class="highlight"><pre><span></span><code><span class="x">use Odder\LighthouseScalars\Core\GenericScalarType;</span>
 
-<span class="x">class AppServiceProvider extends ServiceProvider</span>
+<span class="x">class Email extends GenericScalarType</span>
 <span class="x">{</span>
-<span class="x">    public function boot()</span>
-<span class="x">    {</span>
-<span class="x">        ...</span>
-<span class="x">    }</span>
+<span class="x">    public ?string $description = &quot;The `Email` scalar type represents textual data, specifically an email address.&quot;;</span>
 
-<span class="x">    public function register(TypeRegistry $typeRegistry)</span>
+<span class="x">    protected function isValid($value): bool</span>
 <span class="x">    {</span>
-<span class="x">        $typeRegistry-&gt;register(Scalars::PositiveFloat);</span>
-<span class="x">        $typeRegistry-&gt;register(Scalars::Emoji);</span>
+<span class="x">        return filter_var($value, FILTER_VALIDATE_EMAIL) !== false;</span>
 <span class="x">    }</span>
 <span class="x">}</span>
 </code></pre></div>
-<p>After you have registered the Scalars you need in the <code>TypeRegistry</code>, you can use them in your schema:</p>
-<div class="highlight"><pre><span></span><code>type Query {
-  mood: Emoji!
-  naturalNumber: PositiveFloat!
-}
+<h3 id="full-example">Full example</h3>
+<div class="highlight"><pre><span></span><code><span class="x">use Odder\LighthouseScalars\Core\GenericScalarType;</span>
+
+<span class="x">class RomanNumeral extends GenericScalarType</span>
+<span class="x">{</span>
+<span class="x">    protected string $supportedNodeType = \GraphQL\Language\AST\StringValueNode::class</span>
+<span class="x">    public ?string $description = &quot;The `RomanNumeral` scalar type a Roman numeral. Data is stored as integers, but displayed as Roman numerals.&quot;;</span>
+
+<span class="x">    public function coerce($value): int</span>
+<span class="x">    {</span>
+<span class="x">        // Convert the Roman numeral to an integer</span>
+<span class="x">    }</span>
+
+<span class="x">    public function coerceOut($value): string</span>
+<span class="x">    {</span>
+<span class="x">        // Convert the integer to a Roman numeral</span>
+<span class="x">    }</span>
+
+<span class="x">    protected function isValid($value): bool</span>
+<span class="x">    {</span>
+<span class="x">        // Validate the integer can be represented as a Roman Numeral (e.g. 1-3999)</span>
+<span class="x">    }</span>
+
+<span class="x">    protected function isValidOut($value): bool</span>
+<span class="x">    {</span>
+<span class="x">        // Validate the Roman numeral is valid</span>
+<span class="x">    }</span>
+<span class="x">}</span>
 </code></pre></div>
-<h3 id="testing">Testing</h3>
-<p>This package includes a set of tests for each scalar. To run the tests, use the following command:</p>
-<div class="highlight"><pre><span></span><code>composer <span class="nb">test</span>
+<h2 id="stringscalartype">StringScalarType</h2>
+<p>A string scalar type which support out of box coercing and validation. By default it supports only StringValueNode. It will attempt to coerce everything going in and out to strings (supports strings, Stringables and numbers). For floats the default behaviour is to round down. No validation is applied to the value.</p>
+<h3 id="simple-example_1">Simple example</h3>
+<div class="highlight"><pre><span></span><code><span class="x">use Odder\LighthouseScalars\Core\StringScalarType;</span>
+
+<span class="x">class Email extends StringScalarType</span>
+<span class="x">{</span>
+<span class="x">    public ?string $description = &quot;The `Email` scalar type represents textual data, specifically an email address.&quot;;</span>
+
+<span class="x">    protected function isValid($value): bool</span>
+<span class="x">    {</span>
+<span class="x">        return filter_var($value, FILTER_VALIDATE_EMAIL) !== false;</span>
+<span class="x">    }</span>
+<span class="x">}</span>
 </code></pre></div>
-<h2 id="documentation">Documentation</h2>
-<p>For more information on how to use each scalar, please refer to the <a href="https://lighthouse-scalars.odder.dev/docs">documentation</a>.</p>
-<h2 id="contributing">Contributing</h2>
-<p>Contributions are welcome! Please read <a href="CONTRIBUTING.md">CONTRIBUTING.md</a> for details on how to contribute to this project.</p>
-<h2 id="license">License</h2>
-<p>The MIT License (MIT). Please see <a href="LICENSE.md">License File</a> for more information.</p>
-<h2 id="credits">Credits</h2>
-<ul>
-<li><a href="https://www.github.com/odder">Odder</a></li>
-<li><a href="../../contributors">All Contributors</a></li>
-<li><a href="https://github.com/webonyx/graphql-php">webonyx/graphql-php</a></li>
-<li><a href="https://lighthouse-php.com/">Lighthouse</a></li>
-<li><a href="https://laravel.com/">Laravel</a></li>
-<li><a href="https://graphql.org/">GraphQL</a></li>
-</ul>
-<h2 id="security">Security</h2>
-<p>If you discover any security-related issues, please email hi@odder.dev instead of using the issue tracker.</p>
-<h2 id="roadmap">Roadmap</h2>
-<p>For v1.0.0:</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Clean up scalar classes</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Clean up Tests</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Clean up Docs</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Add support for Time/Date scalars</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Add support for BigInt Scalars</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Get feedback from community</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Add implementation guides in the documentation</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Add Logo</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Add more emojis. 😍😍😍</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Bake Cake 🍰</li>
-</ul>
+<h3 id="full-example_1">Full example</h3>
+<div class="highlight"><pre><span></span><code><span class="x">use Odder\LighthouseScalars\Core\StringScalarType;</span>
+
+<span class="x">class RomanNumeral extends GenericScalarType</span>
+<span class="x">{</span>
+<span class="x">    protected string $supportedNodeType = \GraphQL\Language\AST\StringValueNode::class</span>
+<span class="x">    public ?string $description = &quot;The `RomanNumeral` scalar type a Roman numeral. Data is stored as integers, but displayed as Roman numerals.&quot;;</span>
+
+<span class="x">    public function coerce($value): int</span>
+<span class="x">    {</span>
+<span class="x">        parent::coerce($value); // Coerce the value to a string before converting to an integer</span>
+<span class="x">        // Convert the Roman numeral to an integer</span>
+<span class="x">    }</span>
+
+<span class="x">    public function coerceOut($value): string</span>
+<span class="x">    {</span>
+<span class="x">        // Convert the integer to a Roman numeral</span>
+<span class="x">    }</span>
+
+<span class="x">    protected function isValid($value): bool</span>
+<span class="x">    {</span>
+<span class="x">        // Validate the integer can be represented as a Roman Numeral (e.g. 1-3999)</span>
+<span class="x">    }</span>
+
+<span class="x">    protected function isValidOut($value): bool</span>
+<span class="x">    {</span>
+<span class="x">        // Validate the Roman numeral is valid</span>
+<span class="x">    }</span>
+<span class="x">}</span>
+</code></pre></div>
+<h2 id="intscalartype">IntScalarType</h2>
+<p>An Integer scalar type which support out of box coercing and validation. By default it supports only IntValueNode. It will attempt to coerce everything going in and out to integers (supports numeric strings and numbers). No validation is applied to the value. Integers are limited to the range of PHP's integer type.</p>
+<h3 id="simple-example_2">Simple example</h3>
+<div class="highlight"><pre><span></span><code><span class="x">use Odder\LighthouseScalars\Core\StringScalarType;</span>
+
+<span class="x">class NaturalNumber extends IntScalarType</span>
+<span class="x">{</span>
+<span class="x">    public ?string $description = &quot;The `Natural Number` scalar type represents a Natural number (positive integer). 0 included.&quot;;</span>
+
+<span class="x">    protected function isValid($value): bool</span>
+<span class="x">    {</span>
+<span class="x">        return $value &gt;= 0;</span>
+<span class="x">    }</span>
+<span class="x">}</span>
+</code></pre></div>
+<h3 id="full-example_2">Full example</h3>
+<div class="highlight"><pre><span></span><code><span class="x">// TODO</span>
+</code></pre></div>
+<h2 id="floatscalartype">FloatScalarType</h2>
+<p>A Float scalar type which support out of box coercing and validation. By default it supports only FloatValueNode. It will attempt to coerce everything going in and out to floats (supports numeric strings and numbers). No validation is applied to the value. Floats are limited to the precision of PHP's float type.</p>
+<h3 id="simple-example_3">Simple example</h3>
+<div class="highlight"><pre><span></span><code><span class="x">use Odder\LighthouseScalars\Core\FloatScalarType;</span>
+
+<span class="x">class NaturalNumber extends FloatScalarType</span>
+<span class="x">{</span>
+<span class="x">    public ?string $description = &quot;The `Natural Number` scalar type represents a Natural number (positive integer). 0 included.&quot;;</span>
+
+<span class="x">    protected function isValid($value): bool</span>
+<span class="x">    {</span>
+<span class="x">        return $value &gt;= 0;</span>
+<span class="x">    }</span>
+<span class="x">}</span>
+</code></pre></div>
+<h3 id="full-example_3">Full example</h3>
+<div class="highlight"><pre><span></span><code><span class="x">// TODO</span>
+</code></pre></div>
+<h2 id="reference">Reference</h2>
+<h3 id="supportednodetype">supportedNodeType</h3>
+<p><code>protected string $supportedNodeType = ValueNode::class</code></p>
+<p>The AST node type that this scalar supports. This is used to validate the input type for literals.</p>
+<p>By default, this is set to <code>ValueNode::class</code>.</p>
+<h3 id="description_1">description</h3>
+<p><code>public ?string $description = null</code></p>
+<p>The description of the scalar type. This is used to generate documentation.</p>
+<h3 id="coercevalue">coerce($value)</h3>
+<p><code>public function coerce($value): mixed</code></p>
+<p>Coerce the input value to the expected type. This is used to convert the input value to the expected type.</p>
+<p>Exceptions should be thrown if the value cannot be coerced. This will be caught and handled by the GraphQL engine.</p>
+<h3 id="coerceoutvalue">coerceOut($value)</h3>
+<p><code>public function coerceOut($value): mixed</code></p>
+<p>Coerce the output value to the expected type. This is used to convert the output value to the expected type.</p>
+<p>Exceptions should be thrown if the value cannot be coerced. This will be caught and handled by the GraphQL engine.</p>
+<p>Default implementation:</p>
+<div class="highlight"><pre><span></span><code><span class="x">public function coerceOut($value): mixed</span>
+<span class="x">{</span>
+<span class="x">    return $this-&gt;coerce($value);</span>
+<span class="x">}</span>
+</code></pre></div>
+<h3 id="isvalidvalue">isValid($value)</h3>
+<p><code>protected function isValid($value): bool</code></p>
+<p>Validate the input value. This is used to validate the input value. Return <code>true</code> if the value is valid, <code>false</code> otherwise.</p>
+<h3 id="isvalidoutvalue">isValidOut($value)</h3>
+<p><code>protected function isValidOut($value): bool</code></p>
+<p>Validate the output value. This is used to validate the output value. Return <code>true</code> if the value is valid, <code>false</code> otherwise.</p>
+<p>Default implementation:</p>
+<div class="highlight"><pre><span></span><code><span class="x">protected function isValidOut($value): bool</span>
+<span class="x">{</span>
+<span class="x">    return $this-&gt;isValid($value);</span>
+<span class="x">}</span>
+</code></pre></div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">March 5, 2024 21:19:07</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">March 8, 2024 08:14:06</span>
       
         <br>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">March 3, 2024 15:56:46</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">March 8, 2024 08:14:06</span>
       
     
   </small>
@@ -1179,15 +1400,30 @@
     
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
+        
+        <a href="index.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Lighthouse Scalars" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Lighthouse Scalars
+            </div>
+          </div>
+        </a>
+      
       
         
-        <a href="GenericScalarType.html" class="md-footer__link md-footer__link--next" aria-label="Next: Custom Scalar Types" rel="next">
+        <a href="Custom%20Scalars/StringScalarType.html" class="md-footer__link md-footer__link--next" aria-label="Next: GenericScalarType" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Custom Scalar Types
+              GenericScalarType
             </div>
           </div>
           <div class="md-footer__button md-icon">

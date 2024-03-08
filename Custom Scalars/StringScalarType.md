@@ -2,7 +2,7 @@
 
 ## Description
 
-A generic scalar type which support out of box coercing and validation. This scalar should support most basic Scalar types.
+A generic scalar type which support out of box coercing and validation. By default it coercing everything going in and out to a string (will convert stringables and numbers as well to strings). No validation is applied to the value.
 
 ## Usage
 
@@ -11,7 +11,7 @@ A generic scalar type which support out of box coercing and validation. This sca
 ```php
 use Odder\LighthouseScalars\Core\GenericScalarType;
 
-class Email extends GenericScalarType
+class Email extends StringScalarType
 {
     public ?string $description = "The `Email` scalar type represents textual data, specifically an email address.";
 
@@ -34,6 +34,7 @@ class RomanNumeral extends GenericScalarType
 
     public function coerce($value): int
     {
+        $value = super::coerce($value); // Coerce the value to a string
         // Convert the Roman numeral to an integer
     }
 
