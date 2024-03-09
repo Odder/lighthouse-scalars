@@ -35,11 +35,7 @@ class Locale extends GenericScalarType
     protected function isValid($value): bool
     {
         $parts = explode('-', $value);
-
-        if (count($parts) > 2) {
-            return false;
-        }
-
+        
         $language = $parts[0];
         $country = $parts[1] ?? '';
         return $this->isValidLanguageCode($language) && ($country === '' || $this->isValidCountryCode($country));

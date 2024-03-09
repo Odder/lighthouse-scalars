@@ -9,7 +9,7 @@ class StringScalarType extends GenericScalarType
 {
     protected string $supportedNodeType = StringValueNode::class;
 
-    protected function coerce($value): string
+    protected function coerce($value): mixed
     {
         if (is_string($value) || is_numeric($value) || $value instanceof \Stringable) {
             echo "StringScalarType::coerce: " . $value . "\n";
