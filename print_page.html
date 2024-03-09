@@ -362,12 +362,59 @@
       
       
         <label class="md-nav__link" for="__nav_4_1">
+          Dates
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Dates" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Dates
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Scalars/Dates/Date.html" class="md-nav__link">
+        Date
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_2">
           Formats
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Formats" data-md-level="2">
-        <label class="md-nav__title" for="__nav_4_1">
+        <label class="md-nav__title" for="__nav_4_2">
           <span class="md-nav__icon md-icon"></span>
           Formats
         </label>
@@ -445,18 +492,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_4_2">
+        <label class="md-nav__link" for="__nav_4_3">
           Geography
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Geography" data-md-level="2">
-        <label class="md-nav__title" for="__nav_4_2">
+        <label class="md-nav__title" for="__nav_4_3">
           <span class="md-nav__icon md-icon"></span>
           Geography
         </label>
@@ -576,18 +623,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" type="checkbox" id="__nav_4_4" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_4_3">
+        <label class="md-nav__link" for="__nav_4_4">
           Internet
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Internet" data-md-level="2">
-        <label class="md-nav__title" for="__nav_4_3">
+        <label class="md-nav__title" for="__nav_4_4">
           <span class="md-nav__icon md-icon"></span>
           Internet
         </label>
@@ -693,18 +740,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" type="checkbox" id="__nav_4_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5" type="checkbox" id="__nav_4_5" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_4_4">
+        <label class="md-nav__link" for="__nav_4_5">
           Numbers
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Numbers" data-md-level="2">
-        <label class="md-nav__title" for="__nav_4_4">
+        <label class="md-nav__title" for="__nav_4_5">
           <span class="md-nav__icon md-icon"></span>
           Numbers
         </label>
@@ -1315,6 +1362,45 @@
                             Scalars <a class='headerlink' href='#section-scalars' title='Permanent link'>↵</a>
                         </h1>
                         
+                        <h2 class='nav-section-title' id='section-dates'>
+                            Dates <a class='headerlink' href='#section-dates' title='Permanent link'>↵</a>
+                        </h2>
+                        <section class="print-page" id="scalars-dates-date"><h1 id="scalars-dates-date-date">Date</h1>
+<h3 id="scalars-dates-date-description">Description</h3>
+<p>The <code>Date</code> scalar type represents a date value as specified by <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>. The <code>Date</code> type is a string and must be in the format <code>YYYY-MM-DD</code>.
+The underlying value is converted to a <code>Carbon</code> instance.</p>
+<h3 id="scalars-dates-date-example">Example</h3>
+<div class="highlight"><pre><span></span><code># schema.graphql
+type Query {
+  user(id: ID!): User
+}
+
+type User {
+  id: ID!
+  name: String!
+  birthDate: Date!
+}
+</code></pre></div>
+<div class="highlight"><pre><span></span><code># Request
+query {
+  user(id: 1) {
+    id
+    name
+    birthDate
+  }
+}
+
+# Response
+# {
+#   &quot;data&quot;: {
+#     &quot;user&quot;: {
+#       &quot;id&quot;: &quot;1&quot;,
+#       &quot;name&quot;: &quot;John Doe&quot;,
+#       &quot;birthDate&quot;: &quot;1990-01-01&quot;
+#     }
+#   }
+# }
+</code></pre></div></section><h1 class='nav-section-title-end'>Ended: Dates</h1>
                         <h2 class='nav-section-title' id='section-formats'>
                             Formats <a class='headerlink' href='#section-formats' title='Permanent link'>↵</a>
                         </h2>
