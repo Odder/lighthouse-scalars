@@ -12,7 +12,6 @@ class StringScalarType extends GenericScalarType
     protected function coerce($value): mixed
     {
         if (is_string($value) || is_numeric($value) || $value instanceof \Stringable) {
-            echo "StringScalarType::coerce: " . $value . "\n";
             return (string) $value;
         }
 

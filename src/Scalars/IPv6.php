@@ -2,9 +2,9 @@
 
 namespace Odder\LighthouseScalars\Scalars;
 
-use Odder\LighthouseScalars\Core\GenericScalarType;
+use Odder\LighthouseScalars\Core\StringScalarType;
 
-class IPv6 extends GenericScalarType
+class IPv6 extends StringScalarType
 {
     public ?string $description = <<<TXT
         The `IPv6` scalar type represents IPv6 address strings.

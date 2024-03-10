@@ -2,9 +2,9 @@
 
 namespace Odder\LighthouseScalars\Scalars;
 
-use Odder\LighthouseScalars\Core\GenericScalarType;
+use Odder\LighthouseScalars\Core\StringScalarType;
 
-class JSON extends GenericScalarType
+class JSON extends StringScalarType
 {
     public ?string $description = <<<TXT
         The `JSON` scalar type represents JSON values as specified by ECMA-404.
@@ -12,6 +12,7 @@ class JSON extends GenericScalarType
 
     protected function coerce($value): mixed
     {
+        $value = parent::coerce($value);
         return json_decode($value, true);
     }
 

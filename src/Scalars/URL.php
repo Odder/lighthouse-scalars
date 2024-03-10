@@ -2,12 +2,9 @@
 
 namespace Odder\LighthouseScalars\Scalars;
 
-use GraphQL\Type\Definition\ScalarType;
-use GraphQL\Error\Error;
-use GraphQL\Language\AST\StringValueNode;
-use Odder\LighthouseScalars\Core\GenericScalarType;
+use Odder\LighthouseScalars\Core\StringScalarType;
 
-class URL extends GenericScalarType
+class URL extends StringScalarType
 {
     public ?string $description = <<<TXT
         The `URL` scalar type represents a valid URL as specified by RFC 3986.

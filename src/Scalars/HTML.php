@@ -4,7 +4,7 @@ namespace Odder\LighthouseScalars\Scalars;
 
 use HTMLPurifier;
 use HTMLPurifier_Config;
-use Odder\LighthouseScalars\Core\GenericScalarType;
+use Odder\LighthouseScalars\Core\StringScalarType;
 
 /**
  * Represents HTML formatted text with sanitization using HTMLPurifier.
@@ -13,7 +13,7 @@ use Odder\LighthouseScalars\Core\GenericScalarType;
  * safety against XSS attacks and other vulnerabilities. It uses HTMLPurifier to clean
  * the HTML content according to a customizable configuration.
  */
-class HTML extends GenericScalarType
+class HTML extends StringScalarType
 {
     /**
      * @var ?string A description of the HTML scalar type.
@@ -40,11 +40,13 @@ class HTML extends GenericScalarType
 
     protected function coerce($value): mixed
     {
+        $value = parent::coerce($value);
         return $this->purifier->purify($value);
     }
 
     protected function coerceOut($value): mixed
     {
+        $value = parent::coerceOut($value);
         return $this->purifier->purify($value);
     }
 }

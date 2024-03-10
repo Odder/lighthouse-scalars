@@ -3,13 +3,13 @@
 namespace Odder\LighthouseScalars\Scalars;
 
 use Emoji as EmojiDetector;
-use Odder\LighthouseScalars\Core\GenericScalarType;
+use Odder\LighthouseScalars\Core\StringScalarType;
 
 /**
  * The `Emoji` scalar type represents a string containing exactly one emoji.
  * This scalar ensures that the input is a single emoji character, using the emoji-detector-php library for validation.
  */
-class Emoji extends GenericScalarType
+class Emoji extends StringScalarType
 {
     public ?string $description = <<<TXT
         The `Emoji` scalar type represents a string containing exactly one emoji. It ensures that inputs are exactly one emoji character, validated using the emoji-detector-php library. This scalar is ideal for applications requiring strict validation of emoji input in GraphQL queries and mutations.

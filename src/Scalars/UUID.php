@@ -3,9 +3,9 @@
 namespace Odder\LighthouseScalars\Scalars;
 
 use GraphQL\Language\AST\StringValueNode;
-use Odder\LighthouseScalars\Core\GenericScalarType;
+use Odder\LighthouseScalars\Core\StringScalarType;
 
-class UUID extends GenericScalarType
+class UUID extends StringScalarType
 {
     public ?string $description = <<<TXT
         The `UUID` scalar type represents a Universally Unique Identifier as defined by RFC 4122.

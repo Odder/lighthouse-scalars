@@ -2,8 +2,9 @@
 
 namespace Odder\LighthouseScalars\Scalars;
 
-use Odder\LighthouseScalars\Core\StringScalarType;
 use Carbon\Carbon;
+use GraphQL\Error\Error;
+use Odder\LighthouseScalars\Core\StringScalarType;
 
 class DateTime extends StringScalarType
 {
@@ -12,9 +13,9 @@ class DateTime extends StringScalarType
         TXT;
 
     /**
-     * @param  mixed  $value
-     * @return \Carbon\Carbon
-     * @throws \GraphQL\Error\Error
+     * @param mixed $value
+     * @return Carbon
+     * @throws Error
      */
     protected function coerce($value): Carbon
     {
@@ -23,7 +24,7 @@ class DateTime extends StringScalarType
     }
 
     /**
-     * @param  \Carbon\Carbon  $value
+     * @param Carbon $value
      * @return string
      */
     protected function coerceOut($value): string

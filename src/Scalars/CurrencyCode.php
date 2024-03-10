@@ -3,9 +3,9 @@
 namespace Odder\LighthouseScalars\Scalars;
 
 use Odder\LighthouseScalars\Concerns\ValidatesCurrencyCode;
-use Odder\LighthouseScalars\Core\GenericScalarType;
+use Odder\LighthouseScalars\Core\StringScalarType;
 
-class CurrencyCode extends GenericScalarType
+class CurrencyCode extends StringScalarType
 {
     use ValidatesCurrencyCode;
 
@@ -15,6 +15,7 @@ class CurrencyCode extends GenericScalarType
 
     protected function coerce($value): string
     {
+        $value = parent::coerce($value);
         return strtoupper($value);
     }
 

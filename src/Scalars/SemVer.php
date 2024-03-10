@@ -3,9 +3,9 @@
 namespace Odder\LighthouseScalars\Scalars;
 
 use GraphQL\Language\AST\StringValueNode;
-use Odder\LighthouseScalars\Core\GenericScalarType;
+use Odder\LighthouseScalars\Core\StringScalarType;
 
-class SemVer extends GenericScalarType
+class SemVer extends StringScalarType
 {
     public ?string $description = <<<TXT
         The `SemVer` scalar type represents semantic versioning strings.

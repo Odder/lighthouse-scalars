@@ -2,8 +2,8 @@
 
 namespace Odder\LighthouseScalars\Scalars;
 
-use Odder\LighthouseScalars\Core\StringScalarType;
 use GraphQL\Error\Error;
+use Odder\LighthouseScalars\Core\StringScalarType;
 
 class Time extends StringScalarType
 {
@@ -12,9 +12,9 @@ class Time extends StringScalarType
         TXT;
 
     /**
-     * @param  mixed  $value
+     * @param mixed $value
      * @return string
-     * @throws \GraphQL\Error\Error
+     * @throws Error
      */
     protected function coerce($value): string
     {
@@ -22,7 +22,7 @@ class Time extends StringScalarType
         if (preg_match('/^\d{1,2}:\d{2}$/', $value)) {
             $value .= ':00';
         }
-        if (! preg_match('/^\d{1,2}:\d{2}:\d{2}$/', $value)) {
+        if (!preg_match('/^\d{1,2}:\d{2}:\d{2}$/', $value)) {
             echo 'failing here';
             throw new Error('Query error: not a valid date format', [$value]);
         }

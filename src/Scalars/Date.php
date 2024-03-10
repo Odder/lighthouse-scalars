@@ -2,9 +2,9 @@
 
 namespace Odder\LighthouseScalars\Scalars;
 
-use Odder\LighthouseScalars\Core\StringScalarType;
 use Carbon\Carbon;
 use GraphQL\Error\Error;
+use Odder\LighthouseScalars\Core\StringScalarType;
 
 class Date extends StringScalarType
 {
@@ -13,21 +13,21 @@ class Date extends StringScalarType
         TXT;
 
     /**
-     * @param  mixed  $value
-     * @return \Carbon\Carbon
-     * @throws \GraphQL\Error\Error
+     * @param mixed $value
+     * @return Carbon
+     * @throws Error
      */
     protected function coerce($value): Carbon
     {
         $value = parent::coerce($value);
-        if (! preg_match('/^\d{4}-\d{2}-\d{2}$/', $value)) {
+        if (!preg_match('/^\d{4}-\d{2}-\d{2}$/', $value)) {
             throw new Error('Query error: not a valid date format', [$value]);
         }
         return Carbon::parse($value);
     }
 
     /**
-     * @param  \Carbon\Carbon  $value
+     * @param Carbon $value
      * @return string
      */
     protected function coerceOut($value): string

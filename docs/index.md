@@ -13,6 +13,7 @@ This package provides a set of custom scalars for the [webonyx/graphql-php](http
 The following scalars are supported:
 
 😍😍😍:
+
 - `Emoji` - see [Emoji](https://en.wikipedia.org/wiki/Emoji)
 
 Numbers:
@@ -54,6 +55,7 @@ Markup:
 - `Markdown` - see [Markdown](https://en.wikipedia.org/wiki/Markdown)
 
 Dates:
+
 - `Date` - see [Date](https://en.wikipedia.org/wiki/ISO_8601)
 - `Time` - see [Time](https://en.wikipedia.org/wiki/ISO_8601)
 - `DateTime` - see [DateTime](https://en.wikipedia.org/wiki/ISO_8601)

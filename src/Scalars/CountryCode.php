@@ -3,9 +3,9 @@
 namespace Odder\LighthouseScalars\Scalars;
 
 use Odder\LighthouseScalars\Concerns\ValidatesCountryCode;
-use Odder\LighthouseScalars\Core\GenericScalarType;
+use Odder\LighthouseScalars\Core\StringScalarType;
 
-class CountryCode extends GenericScalarType
+class CountryCode extends StringScalarType
 {
     use ValidatesCountryCode;
 
@@ -15,6 +15,7 @@ class CountryCode extends GenericScalarType
 
     protected function coerce($value): string
     {
+        $value = parent::coerce($value);
         return strtoupper($value);
     }
 

@@ -12,7 +12,6 @@ class FloatScalarType extends GenericScalarType
 
     protected function coerce($value): float
     {
-        echo "FloatScalarType::coerce: " . (float)$value . "\n";
         if (is_numeric($value)) {
             return (float) $value;
         }
