@@ -8,13 +8,11 @@
 
 This package provides a set of custom scalars for the [webonyx/graphql-php](https://github.com/webonyx/graphql-php) library, which is used under the hood by [Lighthouse](https://lighthouse-php.com/), a PHP port of the popular [GraphQL](https://graphql.org/) server.
 
-
 ## Supported Scalars
 
 The following scalars are supported:
 
 😍😍😍:
-
 - `Emoji` - see [Emoji](https://en.wikipedia.org/wiki/Emoji)
 
 Numbers:
@@ -47,12 +45,18 @@ Internet:
 - `IPv6` - see [IPv6](https://en.wikipedia.org/wiki/IPv6)
 - `SemVer` - see [Semantic Versioning](https://semver.org/)
 - `UUID` - Using UUID4. see [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier)
+- `JWT` - JSON Web Token. see [JWT](https://en.wikipedia.org/wiki/JSON_Web_Token)'
 
 Markup:
 
 - `JSON` - see [JSON](https://en.wikipedia.org/wiki/JSON)
 - `HTML` - Sanitised using [HTML Purifier](http://htmlpurifier.org/) to prevent XSS attacks. see [HTML](https://en.wikipedia.org/wiki/HTML)
 - `Markdown` - see [Markdown](https://en.wikipedia.org/wiki/Markdown)
+
+Dates:
+- `Date` - see [Date](https://en.wikipedia.org/wiki/ISO_8601)
+- `Time` - see [Time](https://en.wikipedia.org/wiki/ISO_8601)
+- `DateTime` - see [DateTime](https://en.wikipedia.org/wiki/ISO_8601)
 
 ## Installation
 
@@ -119,7 +123,7 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 ## Credits
 
 - [Odder](https://www.github.com/odder)
-- [All Contributors](../../contributors)
+- ChatGPT & GitHub Copilot
 - [webonyx/graphql-php](https://github.com/webonyx/graphql-php)
 - [Lighthouse](https://lighthouse-php.com/)
 - [Laravel](https://laravel.com/)
@@ -136,7 +140,7 @@ For v1.0.0:
 - [x] Clean up scalar classes
 - [ ] Clean up Tests
 - [ ] Clean up Docs
-- [ ] Add support for Time/Date scalars
+- [x] Add support for Time/Date scalars
 - [ ] Add support for BigInt Scalars
 - [ ] Get feedback from community
 - [ ] Add implementation guides in the documentation
